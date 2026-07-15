@@ -1,31 +1,161 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<title>Test</title>
-<style>
-body{
-    direction: rtl;
-    text-align: right;
-    font-family: Tahoma;
-}
-.ltr{
-    direction:ltr;
-    unicode-bidi:isolate;
-    display:inline-block;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>آموزش STM32</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Tahoma;
+            background:#f4f4f4;
+        }
+
+        /*=========================
+              Header
+        =========================*/
+
+        header{
+            background:#0d47a1;
+            color:white;
+            text-align:center;
+            padding:25px;
+        }
+
+        /*=========================
+             Navigation
+        =========================*/
+
+        nav{
+            background:#1565c0;
+            padding:15px;
+        }
+
+        nav ul{
+            margin:0;
+            padding:0;
+            list-style:none;
+            display:flex;
+            justify-content:center;
+            gap:30px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+        nav a:hover{
+            color:yellow;
+        }
+
+        /*=========================
+             Hero Section
+        =========================*/
+
+        .hero{
+
+            text-align:center;
+            padding:80px 20px;
+            background:white;
+
+        }
+
+        .hero h2{
+
+            font-size:40px;
+            color:#0d47a1;
+
+        }
+
+        .hero p{
+
+            font-size:20px;
+            color:#555;
+
+        }
+
+        .hero button{
+
+            background:#0d47a1;
+            color:white;
+            border:none;
+            padding:15px 30px;
+            font-size:18px;
+            cursor:pointer;
+            border-radius:8px;
+
+        }
+
+        .hero button:hover{
+
+            background:#1976d2;
+
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-<h1> آموزش کامل <span class="ltr">STM32</span> با نرم افزار <span class="ltr">KEIL</span>  </h1>
-<p>
-من در حال یادگیری
-<span class="ltr">HTML</span>
-و
-<span class="ltr">STM32</span>
-هستم.
-</p>
+    <!-- Header -->
+
+    <header>
+
+        <h1>STM32 Academy</h1>
+
+        <p>آموزش پروژه محور میکروکنترلر STM32</p>
+
+    </header>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <ul>
+
+            <li><a href="#">خانه</a></li>
+
+            <li><a href="#">آموزش STM32</a></li>
+
+            <li><a href="#">پروژه‌ها</a></li>
+
+            <li><a href="#">مقالات</a></li>
+
+            <li><a href="#">تماس با ما</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <h2>آموزش کامل STM32 از صفر تا پیشرفته</h2>
+
+        <p>
+
+            آموزش کاملاً پروژه محور با نرم‌افزارهای
+            CubeMX ، Keil و STM32CubeIDE
+
+        </p>
+
+        <button>
+
+            شروع آموزش
+
+        </button>
+
+    </section>
 
 </body>
+
 </html>
