@@ -1,0 +1,38 @@
+body{
+    font-family: Tahoma, sans-serif;
+    background-color:#f5f5f5;
+    direction: rtl;
+    text-align:center;
+    margin:30px;
+}
+
+h1{
+    color:#0066cc;
+}
+
+h2{
+    color:#444;
+}
+
+a{
+    color:#0066cc;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+a:hover{
+    color:red;
+}
+
+img{
+    border-radius:10px;
+}
+
+hr{
+    margin:25px 0;
+}
+
+ul,ol{
+    display:inline-block;
+    text-align:right;
+}
