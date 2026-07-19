@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dr-abdoli.github.io/STM32-Training/sitemap.xml
