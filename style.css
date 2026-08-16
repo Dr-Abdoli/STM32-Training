@@ -63,3 +63,154 @@ ul,ol{
     padding: 30px 0;
     text-align: right;
 }
+
+
+
+
+/* =========================
+   صفحه درباره من
+   ========================= */
+
+.about-page {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 35px 20px 50px;
+
+    background-color: #f7f8fa;
+
+    text-align: right;
+}
+
+
+/* عکس پروفایل */
+
+.about-photo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-photo img {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    object-position: center 25%;
+
+    border-radius: 50%;
+
+    border: 4px solid white;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.20);
+}
+
+
+/* عنوان اصلی */
+
+.about-page h1 {
+    max-width: 1000px;
+
+    margin: 20px auto 25px;
+
+    text-align: right;
+
+    color: #0066cc;
+
+    font-size: 32px;
+}
+
+
+/* عنوان درباره من */
+
+.about-page h2 {
+    max-width: 1000px;
+
+    margin: 0 auto 25px;
+
+    text-align: right;
+
+    color: #333;
+
+    font-size: 25px;
+}
+
+
+/* متن ها */
+
+.about-page p {
+    max-width: 1000px;
+
+    margin: 0 auto 20px;
+
+    text-align: justify;
+
+    line-height: 2;
+
+    font-size: 17px;
+
+    color: #333;
+}
+
+
+/* خط جداکننده */
+
+.about-page hr {
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    border: 0;
+
+    border-top: 1px solid #ccc;
+}
+
+
+/* لینک بازگشت */
+
+.about-page > a {
+    display: block;
+
+    max-width: 1000px;
+
+    margin: 20px auto;
+
+    text-align: right;
+
+    color: #0066cc;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* حالت موبایل */
+
+@media (max-width: 700px) {
+
+    .about-page {
+        width: 92%;
+        padding: 25px 10px 40px;
+    }
+
+    .about-photo img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-page h1 {
+        font-size: 26px;
+    }
+
+    .about-page h2 {
+        font-size: 22px;
+    }
+
+    .about-page p {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+}
