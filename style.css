@@ -26,31 +26,25 @@ body {
 
 
 /* =========================
-   عکس پروفایل
-   ========================= */
-
+/* عکس پروفایل */
 .about-photo {
     text-align: center;
     margin-bottom: 30px;
 }
 
 .about-photo img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
 
-    /* عکس کاملاً داخل دایره قرار می‌گیرد */
-    object-fit: contain;
-
-    /* مرکز عکس */
-    object-position: center;
+    object-fit: cover;
+    object-position: center 18%;
 
     border-radius: 50%;
 
-    /* حذف کادر سفید */
     border: none;
 
-    /* سایه */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+}
 
     display: block;
     margin: 0 auto;
