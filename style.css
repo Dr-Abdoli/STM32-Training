@@ -36,3 +36,18 @@ ul,ol{
     display:inline-block;
     text-align:right;
 }
+
+
+.about-photo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-photo img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
