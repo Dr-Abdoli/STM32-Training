@@ -3,7 +3,7 @@ body{
     background-color:#f5f5f5;
     direction: rtl;
     text-align:center;
-    margin:30px;
+        margin:0;
 }
 
 h1{
@@ -56,23 +56,9 @@ ul,ol{
 /* عرض و راستای صفحه درباره من */
 
 .about-page {
-    padding: 30px 20px;
-}
-
-.about-page > h1,
-.about-page > h2,
-.about-page > p,
-.about-page > hr,
-.about-page > div,
-.about-page > a {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-.about-page {
     width: 90%;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 30px 0;
+    text-align: right;
 }
