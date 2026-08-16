@@ -1,5 +1,5 @@
 /* =========================
-   تنظیمات اصلی سایت
+   تنظیمات کلی
    ========================= */
 
 body {
@@ -20,9 +20,7 @@ body {
     max-width: 1100px;
     margin: 0 auto;
     padding: 35px 20px 50px;
-
     background-color: #f7f8fa;
-
     text-align: right;
 }
 
@@ -37,19 +35,25 @@ body {
 }
 
 .about-photo img {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
 
+    /* عکس کاملاً داخل دایره قرار می‌گیرد */
     object-fit: contain;
+
+    /* مرکز عکس */
     object-position: center;
 
     border-radius: 50%;
 
-    border: 4px solid white;
+    /* حذف کادر سفید */
+    border: none;
 
-    background-color: #f7f8fa;
-
+    /* سایه */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -59,13 +63,10 @@ body {
 
 .about-page h1 {
     max-width: 1000px;
-
     margin: 20px auto 25px;
-
     text-align: right;
 
     color: #0066cc;
-
     font-size: 32px;
 }
 
@@ -76,19 +77,17 @@ body {
 
 .about-page h2 {
     max-width: 1000px;
-
     margin: 0 auto 25px;
 
     text-align: right;
 
     color: #333;
-
     font-size: 25px;
 }
 
 
 /* =========================
-   متن ها
+   متن‌ها
    ========================= */
 
 .about-page p {
@@ -142,38 +141,8 @@ body {
 }
 
 
-/* =========================
-   لینک ها
-   ========================= */
-
-a {
-    color: #0066cc;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
+.about-page > a:hover {
     color: red;
-}
-
-
-/* =========================
-   تصاویر عمومی
-   ========================= */
-
-img {
-    border-radius: 10px;
-}
-
-
-/* =========================
-   لیست ها
-   ========================= */
-
-ul,
-ol {
-    display: inline-block;
-    text-align: right;
 }
 
 
@@ -189,8 +158,8 @@ ol {
     }
 
     .about-photo img {
-        width: 150px;
-        height: 150px;
+        width: 170px;
+        height: 170px;
     }
 
     .about-page h1 {
