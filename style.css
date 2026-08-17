@@ -315,9 +315,9 @@ h1, h2 {
 
 
 .site-header {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .site-header + hr {
-    margin: 5px 0;
+    margin: 2px 0;
 }
