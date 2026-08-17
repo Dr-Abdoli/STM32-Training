@@ -331,3 +331,12 @@ h1, h2 {
     display: block;
     margin-top: 5px;
 }
+
+
+.site-header h1 {
+    margin: 0 !important;
+}
+
+.site-header h2 {
+    margin: 5px 0 !important;
+}
