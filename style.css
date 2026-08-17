@@ -312,3 +312,12 @@ h1, h2 {
 .site-header span {
     font-size: 18px;
 }
+
+
+.site-header {
+    margin-bottom: 5px;
+}
+
+.site-header + hr {
+    margin: 5px 0;
+}
