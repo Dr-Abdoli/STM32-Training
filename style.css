@@ -298,9 +298,8 @@ h1, h2 {
 
 .site-header {
     text-align: center;
-    margin: 25px auto;
+    margin: 20px auto 15px auto;
 }
-
 
 .site-header h1 {
     font-family: 'Vazirmatn', Tahoma, sans-serif;
