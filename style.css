@@ -289,40 +289,33 @@ h1, h2 {
 
 
 
-/* هدر اصلی سایت */
 
+
+
+/* اصلاح نهایی هدر اصلی */
 
 .site-header {
     text-align: center;
-    margin: 10px auto 5px auto;
+    margin: 10px auto !important;
 }
-
 
 .site-header h1 {
+    margin: 0 0 3px 0 !important;
     font-size: 42px;
-    font-weight: 800;
-    color: #0066cc;
-    margin: 0 0 2px 0;
 }
-
 
 .site-header h2 {
+    margin: 0 0 5px 0 !important;
     font-size: 26px;
-    font-weight: 700;
-    margin: 0 0 3px 0;
 }
-
 
 .site-header p {
+    margin: 3px 0 !important;
     font-size: 20px;
-    margin: 2px 0;
 }
-
 
 .site-header span {
+    margin: 0 !important;
     font-size: 18px;
-    display: block;
-    margin-top: 0;
 }
-
 
