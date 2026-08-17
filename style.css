@@ -220,3 +220,44 @@ body {
     }
 
 }
+
+
+.about-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+
+.stm32-logo {
+    text-align: center;
+    direction: ltr;
+}
+
+
+.chip-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+
+.stm32-logo h2 {
+    color: #0066cc;
+    margin: 5px;
+    font-size: 28px;
+}
+
+
+.stm32-logo p {
+    color: #555;
+    font-size: 18px;
+    margin: 5px;
+}
+
+
+.stm32-logo span {
+    font-size: 15px;
+    color: #777;
+}
