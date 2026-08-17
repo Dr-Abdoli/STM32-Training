@@ -291,3 +291,36 @@ h1, h2 {
     height: auto;
     display: block;
 }
+
+
+
+/* هدر اصلی سایت */
+
+.site-header {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.site-header h1 {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.site-header h2 {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.site-header p {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.site-header span {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    font-size: 18px;
+}
