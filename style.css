@@ -296,17 +296,20 @@ h1, h2 {
 
 /* هدر اصلی سایت */
 
+/* هدر اصلی سایت */
+
 .site-header {
     text-align: center;
-    margin: 20px auto 5px auto;
+    margin: 20px auto 10px auto;
 }
+
 
 .site-header h1 {
     font-family: 'Vazirmatn', Tahoma, sans-serif;
     font-size: 42px;
     font-weight: 800;
     color: #0066cc;
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
 }
 
 
@@ -314,14 +317,14 @@ h1, h2 {
     font-family: 'Vazirmatn', Tahoma, sans-serif;
     font-size: 26px;
     font-weight: 700;
-    margin: 5px 0 10px 0;
+    margin: 0 0 8px 0;
 }
 
 
 .site-header p {
     font-family: 'Vazirmatn', Tahoma, sans-serif;
     font-size: 20px;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 
@@ -329,14 +332,7 @@ h1, h2 {
     font-family: 'Vazirmatn', Tahoma, sans-serif;
     font-size: 18px;
     display: block;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 
-.site-header h1 {
-    margin: 0 !important;
-}
-
-.site-header h2 {
-    margin: 5px 0 !important;
-}
