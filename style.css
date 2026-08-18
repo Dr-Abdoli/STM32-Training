@@ -296,26 +296,29 @@ h1, h2 {
     font-size: 42px;
     font-weight: 800;
     color: #0066cc;
+    margin: 0;
 }
 
 .site-header h2 {
     font-size: 26px;
     font-weight: 700;
+    margin: 0;
 }
 
 .site-header p {
     font-size: 20px;
+    margin: 0;
 }
 
 .site-header span {
     font-size: 18px;
 }
 
-
 .site-header {
-    margin-bottom: 2px;
+    margin: 0;
+    padding: 0;
 }
 
 .site-header + hr {
-    margin: 2px 0;
+    margin: 0;
 }
