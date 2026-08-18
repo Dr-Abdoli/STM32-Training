@@ -325,6 +325,7 @@ h1, h2 {
 
 
 
+
 .video-container video {
     width: 700px;
     height: 400px;
@@ -337,4 +338,77 @@ h1, h2 {
         width:95%;
         height:auto;
     }
+}
+
+
+
+/* =========================
+   کارت‌های دوره آموزشی
+   ========================= */
+
+.courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+
+.course-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+    text-align: center;
+
+    transition: 0.3s;
+
+}
+
+
+.course-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.course-card h3 {
+
+    color: #0066cc;
+
+    font-size: 24px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.course-card p {
+
+    font-size: 16px;
+
+    color: #444;
+
+    line-height: 2;
+
+}
+
+
+/* موبایل */
+
+@media(max-width:700px){
+
+    .courses {
+
+        grid-template-columns: 1fr;
+
+    }
+
 }
