@@ -480,3 +480,56 @@ h1, h2 {
     }
 
 }
+
+
+/* =========================
+   مسیر یادگیری STM32
+   ========================= */
+
+.learning-path {
+
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 40px auto;
+
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+
+    text-align: right;
+
+}
+
+
+.learning-path h2 {
+
+    text-align: center;
+
+    color: #0066cc;
+
+    margin-bottom: 25px;
+
+}
+
+
+.learning-path ol {
+
+    line-height: 2.5;
+
+    font-size: 17px;
+
+    padding-right: 30px;
+
+}
+
+
+.learning-path li {
+
+    margin-bottom: 10px;
+
+}
