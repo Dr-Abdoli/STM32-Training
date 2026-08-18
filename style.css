@@ -421,21 +421,20 @@ h1, h2 {
    ========================= */
 
 .projects-container {
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-
+    width: 90%;
     max-width: 1000px;
-
     margin: 30px auto;
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 
 .project-card {
+
+    width: 220px;
 
     background: white;
 
@@ -454,26 +453,11 @@ h1, h2 {
 
     color:#0066cc;
 
-    font-size:22px;
-
 }
 
 
 .project-card p {
 
-    color:#444;
-
     line-height:2;
-
-}
-
-
-@media(max-width:700px){
-
-    .projects-container {
-
-        grid-template-columns:1fr;
-
-    }
 
 }
