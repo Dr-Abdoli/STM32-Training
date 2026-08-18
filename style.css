@@ -538,3 +538,144 @@ h1, h2 {
 .path-card h3 {
     margin-right: 20px;
 }
+
+
+
+/* =========================
+   منوی شناور سمت چپ
+========================= */
+
+
+.side-menu {
+
+    position: fixed;
+
+    left: 20px;
+
+    top: 120px;
+
+    width: 90px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:15px 5px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+    z-index:1000;
+
+}
+
+
+.side-menu a {
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:#333;
+
+    margin:15px 0;
+
+    font-size:14px;
+
+}
+
+
+.side-menu a:first-letter {
+
+    font-size:35px;
+
+}
+
+
+.side-menu a:hover {
+
+    color:#0066cc;
+
+    transform:scale(1.1);
+
+}
+
+
+
+/* =========================
+   فوتر پایین سایت
+========================= */
+
+
+.footer {
+
+    margin-top:50px;
+
+    background:white;
+
+    padding:25px;
+
+    border-top:1px solid #ccc;
+
+}
+
+
+.footer-menu {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.footer-menu a {
+
+    text-decoration:none;
+
+    color:#0066cc;
+
+    font-weight:bold;
+
+}
+
+
+.footer-info {
+
+    margin-top:25px;
+
+    text-align:center;
+
+    line-height:2;
+
+}
+
+
+
+/* موبایل */
+
+@media(max-width:700px){
+
+.side-menu{
+
+    display:none;
+
+}
+
+
+.footer-menu{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+}
