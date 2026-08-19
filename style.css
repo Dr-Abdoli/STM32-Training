@@ -1139,3 +1139,179 @@ h1, h2 {
 .spi-card .course-icon {
     color: #6256d9;
 }
+
+
+
+
+/* =========================================
+   پروژه‌های عملی STM32
+========================================= */
+
+.project-card {
+    position: relative;
+
+    padding: 30px 20px 25px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* آیکون بالای هر پروژه */
+
+.project-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* حرکت کارت هنگام قرار گرفتن موس */
+
+.project-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================
+   رنگ پروژه OLED
+========================================= */
+
+.oled-project {
+    background: linear-gradient(145deg, #eefcff, #ffffff);
+
+    border-top: 4px solid #00a6b4;
+}
+
+.oled-project .project-icon {
+    color: #00a6b4;
+}
+
+
+/* =========================================
+   رنگ پروژه MAX7219
+========================================= */
+
+.max-project {
+    background: linear-gradient(145deg, #fff3e6, #ffffff);
+
+    border-top: 4px solid #f59e0b;
+}
+
+.max-project .project-icon {
+    color: #f59e0b;
+}
+
+
+/* =========================================
+   رنگ پروژه EEPROM
+========================================= */
+
+.eeprom-project {
+    background: linear-gradient(145deg, #f4edff, #ffffff);
+
+    border-top: 4px solid #7b2cff;
+}
+
+.eeprom-project .project-icon {
+    color: #7b2cff;
+}
+
+
+/* =========================================
+   رنگ پروژه GPIO
+========================================= */
+
+.gpio-project {
+    background: linear-gradient(145deg, #eefaf1, #ffffff);
+
+    border-top: 4px solid #28a745;
+}
+
+.gpio-project .project-icon {
+    color: #28a745;
+}
+
+
+/* =========================================
+   رنگ پروژه Timer
+========================================= */
+
+.timer-project {
+    background: linear-gradient(145deg, #f1f0ff, #ffffff);
+
+    border-top: 4px solid #6256d9;
+}
+
+.timer-project .project-icon {
+    color: #6256d9;
+}
+
+
+/* =========================================
+   رنگ پروژه UART
+========================================= */
+
+.uart-project {
+    background: linear-gradient(145deg, #eef6ff, #ffffff);
+
+    border-top: 4px solid #1683e8;
+}
+
+.uart-project .project-icon {
+    color: #1683e8;
+}
+
+
+/* =========================================
+   رنگ پروژه ADC
+========================================= */
+
+.adc-project {
+    background: linear-gradient(145deg, #fff0f3, #ffffff);
+
+    border-top: 4px solid #e83e8c;
+}
+
+.adc-project .project-icon {
+    color: #e83e8c;
+}
+
+
+/* =========================================
+   رنگ پروژه Tera Term
+========================================= */
+
+.tera-project {
+    background: linear-gradient(145deg, #f0f8ff, #ffffff);
+
+    border-top: 4px solid #3478c9;
+}
+
+.tera-project .project-icon {
+    color: #3478c9;
+}
