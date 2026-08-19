@@ -1011,3 +1011,131 @@ h1, h2 {
     font-size: 14px;
     color: #666;
 }
+
+
+
+/* =========================================
+   کارت‌های دوره آموزشی
+========================================= */
+
+.course-card {
+    position: relative;
+
+    padding: 30px 20px 25px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+
+    overflow: hidden;
+}
+
+
+/* آیکون بالای کارت */
+
+.course-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* حرکت ظریف هنگام رفتن موس روی کارت */
+
+.course-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================================
+   رنگ مخصوص هر دوره
+========================================= */
+
+.gpio-card {
+    background: linear-gradient(145deg, #eefaf1, #ffffff);
+    border-top: 4px solid #28a745;
+}
+
+.gpio-card .course-icon {
+    color: #28a745;
+}
+
+
+.uart-card {
+    background: linear-gradient(145deg, #eef6ff, #ffffff);
+    border-top: 4px solid #1683e8;
+}
+
+.uart-card .course-icon {
+    color: #1683e8;
+}
+
+
+.timer-card {
+    background: linear-gradient(145deg, #f4edff, #ffffff);
+    border-top: 4px solid #7b2cff;
+}
+
+.timer-card .course-icon {
+    color: #7b2cff;
+}
+
+
+.pwm-card {
+    background: linear-gradient(145deg, #fff3e6, #ffffff);
+    border-top: 4px solid #f59e0b;
+}
+
+.pwm-card .course-icon {
+    color: #f59e0b;
+}
+
+
+.adc-card {
+    background: linear-gradient(145deg, #fff0f3, #ffffff);
+    border-top: 4px solid #e83e8c;
+}
+
+.adc-card .course-icon {
+    color: #e83e8c;
+}
+
+
+.i2c-card {
+    background: linear-gradient(145deg, #eefcff, #ffffff);
+    border-top: 4px solid #00a6b4;
+}
+
+.i2c-card .course-icon {
+    color: #00a6b4;
+}
+
+
+.spi-card {
+    background: linear-gradient(145deg, #f1f0ff, #ffffff);
+    border-top: 4px solid #6256d9;
+}
+
+.spi-card .course-icon {
+    color: #6256d9;
+}
