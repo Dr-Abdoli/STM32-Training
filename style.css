@@ -879,6 +879,7 @@ h1, h2 {
 
 .site-header {
     padding-top: 25px;
+    position: relative;
 }
 
 
@@ -1322,11 +1323,9 @@ h1, h2 {
 
 hr {
     border: none;
-
     width: 120px;
     height: 3px;
-
-    margin: 35px auto;
+    margin: 10px auto;
 
     border-radius: 10px;
 
@@ -1557,55 +1556,54 @@ hr {
    ========================= */
 
 
-/* =========================================
-   درخواست اجرای پروژه
-========================================= */
 
 .project-request {
-    width: 360px;
-    box-sizing: border-box;
+    position: absolute;
 
-    margin: 20px 25px 10px auto;
+    right: 25px;
+    top: 20px;
 
-    padding: 20px 25px;
+    padding: 18px 30px;
 
     background: linear-gradient(135deg, #eef6ff, #f5efff);
 
-    border: 2px solid #cdb8ff;
+    border: 1px solid #d6c7ff;
 
-    border-radius: 16px;
+    border-radius: 12px;
 
     text-align: center;
 
-    box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+    z-index: 10;
 }
 
 
 .project-request strong {
     display: block;
 
-    font-size: 17px;
+    font-size: 13px;
 
     color: #173b72;
 
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 
 .project-request a {
     display: inline-block;
 
-    padding: 9px 20px;
+    padding: 5px 12px;
 
     background: linear-gradient(90deg, #0066cc, #7b2cff);
 
     color: white;
 
-    border-radius: 9px;
+    border-radius: 8px;
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 12px;
 
     font-weight: bold;
 
@@ -1616,7 +1614,7 @@ hr {
 .project-request a:hover {
     transform: translateY(-2px);
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 
@@ -1663,4 +1661,13 @@ hr {
 .project-request a:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+.site-header + hr {
+    margin-bottom: 10px;
+}
+
+.site-header + hr + h2 {
+    margin-top: 10px;
 }
