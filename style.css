@@ -1557,22 +1557,7 @@ hr {
    ========================= */
 
 
-   .project-request {
-    position: absolute;
-    right: 25px;
 
-    top: 20px;
-
-    padding: 18px 30px;
-
-    background: linear-gradient(135deg, #eef6ff, #f5efff);
-    border: 1px solid #d6c7ff;
-    border-radius: 12px;
-
-    text-align: center;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
 
 
 
