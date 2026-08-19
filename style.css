@@ -1379,9 +1379,10 @@ hr {
 
 
 
-/* انتقال خط تزئینی به وسط */
+/* خط تزئینی وسط صفحه */
 .hero::after {
     left: 50% !important;
     right: auto !important;
+    width: 120px !important;
     transform: translateX(-50%) !important;
 }
