@@ -1354,3 +1354,25 @@ hr {
 .site-header {
     border-bottom: none !important;
 }
+
+
+
+.about-page hr {
+    display: block;
+    width: 120px;
+    height: 3px;
+
+    border: none;
+    border-radius: 10px;
+
+    margin: 35px auto !important;
+
+    background: linear-gradient(
+        90deg,
+        #6c2cff,
+        #9b4dff,
+        #ff9f43
+    );
+
+    opacity: 0.9;
+}
