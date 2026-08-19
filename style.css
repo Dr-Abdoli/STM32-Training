@@ -1399,3 +1399,153 @@ hr {
 .hero::after {
     display: none !important;
 }
+
+
+
+/* ===============================
+   مسیر یادگیری STM32
+   =============================== */
+
+.learning-path {
+    max-width: 1000px;
+    margin: 70px auto;
+    padding: 35px 25px 45px;
+    background: linear-gradient(135deg, #f5f0ff, #eef7ff);
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+/* عنوان مسیر یادگیری */
+
+.learning-path > h2 {
+    margin-bottom: 35px;
+    font-size: 28px;
+    color: #0066cc;
+    position: relative;
+}
+
+/* خط کوچک زیر عنوان */
+
+.learning-path > h2::after {
+    content: "";
+    display: block;
+    width: 140px;
+    height: 4px;
+    margin: 12px auto 0;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        #7b2cff,
+        #2196f3,
+        #ff9800
+    );
+}
+
+/* کادر هر مرحله */
+
+.path-card {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 28%;
+    min-height: 150px;
+    margin: 10px;
+    padding: 25px 20px 20px;
+
+    background: white;
+    border-radius: 18px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+
+    border-top: 5px solid #2196f3;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* رنگ متفاوت برای مراحل */
+
+.path-card:nth-of-type(2) {
+    border-top-color: #7b2cff;
+}
+
+.path-card:nth-of-type(3) {
+    border-top-color: #00a86b;
+}
+
+.path-card:nth-of-type(4) {
+    border-top-color: #ff9800;
+}
+
+.path-card:nth-of-type(5) {
+    border-top-color: #e91e63;
+}
+
+.path-card:nth-of-type(6) {
+    border-top-color: #00a9c7;
+}
+
+.path-card:nth-of-type(7) {
+    border-top-color: #673ab7;
+}
+
+/* شماره مرحله */
+
+.path-card h3 {
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #f1f5f9;
+    color: #0066cc;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* متن هر مرحله */
+
+.path-card p {
+    margin: 0;
+    line-height: 2;
+    font-size: 15px;
+    color: #333;
+}
+
+/* افکت هنگام رفتن موس */
+
+.path-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* نمایش مناسب در موبایل */
+
+@media (max-width: 900px) {
+
+    .path-card {
+        width: 42%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .learning-path {
+        margin: 40px 15px;
+        padding: 25px 15px;
+    }
+
+    .path-card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+}
