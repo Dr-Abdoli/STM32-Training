@@ -1671,3 +1671,30 @@ hr {
 .site-header + hr + h2 {
     margin-top: 10px;
 }
+
+
+/* =========================
+   بزرگ‌تر کردن کادر پروژه
+========================= */
+
+.project-request {
+    right: 20px;
+    top: 15px;
+
+    width: 290px;
+    min-height: 130px;
+
+    padding: 25px 30px;
+
+    box-sizing: border-box;
+}
+
+.project-request strong {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.project-request a {
+    padding: 9px 18px;
+    font-size: 14px;
+}
