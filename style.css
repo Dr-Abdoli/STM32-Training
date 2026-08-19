@@ -679,3 +679,97 @@ h1, h2 {
 }
 
 }
+
+
+/* ================================
+   سربرگ کوچک و حرفه‌ای سایت
+================================ */
+
+.academy-topbar {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 40px;
+
+    direction: rtl;
+
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+/* لوگو سمت راست */
+
+.academy-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+.academy-brand img {
+    width: 55px !important;
+    height: 55px !important;
+
+    object-fit: contain !important;
+    display: block;
+}
+
+.academy-brand span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0066b3;
+    white-space: nowrap;
+}
+
+/* متن کنار لوگو */
+
+.academy-description {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+
+    color: #222;
+}
+
+.academy-description small {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 14px;
+    font-weight: normal;
+
+    color: #666;
+}
+
+/* موبایل */
+
+@media (max-width: 700px) {
+
+    .academy-topbar {
+        padding: 10px 15px;
+    }
+
+    .academy-brand img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .academy-brand span {
+        font-size: 16px;
+    }
+
+    .academy-description {
+        font-size: 16px;
+    }
+
+    .academy-description small {
+        font-size: 12px;
+    }
+}
