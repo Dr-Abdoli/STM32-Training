@@ -1549,3 +1549,55 @@ hr {
     }
 
 }
+
+
+
+/* =========================
+   درخواست اجرای پروژه
+   ========================= */
+
+.project-request {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    padding: 10px 16px;
+
+    background: linear-gradient(135deg, #eef6ff, #f5efff);
+    border: 1px solid #d6c7ff;
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.project-request strong {
+    display: block;
+    font-size: 13px;
+    color: #173b72;
+    margin-bottom: 5px;
+}
+
+.project-request a {
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    background: linear-gradient(90deg, #0066cc, #7b2cff);
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.project-request a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
