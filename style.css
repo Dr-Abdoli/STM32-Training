@@ -1557,7 +1557,82 @@ hr {
    ========================= */
 
 
+/* =========================================
+   درخواست اجرای پروژه
+========================================= */
 
+.project-request {
+    width: 360px;
+    box-sizing: border-box;
+
+    margin: 20px 25px 10px auto;
+
+    padding: 20px 25px;
+
+    background: linear-gradient(135deg, #eef6ff, #f5efff);
+
+    border: 2px solid #cdb8ff;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+}
+
+
+.project-request strong {
+    display: block;
+
+    font-size: 17px;
+
+    color: #173b72;
+
+    margin-bottom: 10px;
+}
+
+
+.project-request a {
+    display: inline-block;
+
+    padding: 9px 20px;
+
+    background: linear-gradient(90deg, #0066cc, #7b2cff);
+
+    color: white;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.project-request a:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+
+/* موبایل */
+
+@media (max-width: 700px) {
+
+    .project-request {
+        width: 90%;
+
+        margin: 20px auto;
+
+        padding: 18px 15px;
+    }
+
+}
 
 
 
