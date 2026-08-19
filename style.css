@@ -1380,9 +1380,19 @@ hr {
 
 
 /* خط تزئینی وسط صفحه */
-.hero::after {
-    left: 50% !important;
-    right: auto !important;
-    width: 120px !important;
-    transform: translateX(-50%) !important;
+.site-header::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    margin: 25px auto 0;
+
+    background: linear-gradient(
+        90deg,
+        #6c2cff,
+        #9b4dff,
+        #ff9f43
+    );
+
+    border-radius: 10px;
 }
