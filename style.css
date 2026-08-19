@@ -920,3 +920,70 @@ h1, h2 {
         font-size: 12px;
     }
 }
+
+
+
+/* =========================================
+   پیام خوش‌آمدگویی
+========================================= */
+
+.welcome-banner {
+    text-align: center;
+
+    padding: 22px 20px 18px;
+
+    direction: rtl;
+
+    background: #ffffff;
+
+    position: relative;
+}
+
+
+/* خط ظریف بالای بخش */
+
+.welcome-banner::before {
+    content: "";
+
+    display: block;
+
+    width: 180px;
+    height: 3px;
+
+    margin: 0 auto 15px;
+
+    background: linear-gradient(
+        90deg,
+        #7b2cff,
+        #a855f7,
+        #f59e0b
+    );
+
+    border-radius: 10px;
+}
+
+
+/* جمله اصلی */
+
+.welcome-banner h2 {
+    margin: 0;
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+    color: #29205c;
+}
+
+
+/* توضیح زیر جمله */
+
+.welcome-banner p {
+    margin: 8px 0 0;
+
+    font-size: 16px;
+
+    color: #666;
+
+    line-height: 1.8;
+}
