@@ -1315,3 +1315,29 @@ h1, h2 {
 .tera-project .project-icon {
     color: #3478c9;
 }
+
+
+
+/* =========================================
+   جداکننده حرفه‌ای بین بخش‌های سایت
+========================================= */
+
+hr {
+    border: none;
+
+    width: 120px;
+    height: 3px;
+
+    margin: 35px auto;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #6c2cff,
+        #9b4dff,
+        #ff9f43
+    );
+
+    opacity: 0.9;
+}
