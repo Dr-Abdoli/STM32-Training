@@ -773,3 +773,150 @@ h1, h2 {
         font-size: 12px;
     }
 }
+
+
+/* =========================================
+   هدر حرفه‌ای STM32 Academy
+========================================= */
+
+.academy-topbar {
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 35px;
+
+    direction: rtl;
+
+    background: #ffffff;
+
+    /* خط حرفه‌ای بنفش تا زرد */
+    border-top: 5px solid;
+    border-image: linear-gradient(
+        90deg,
+        #7b2cff,
+        #a855f7,
+        #f59e0b
+    ) 1;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================
+   بخش لوگو - سمت راست
+========================================= */
+
+.academy-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    flex-shrink: 0;
+}
+
+.academy-brand img {
+    width: 70px !important;
+    height: 70px !important;
+
+    object-fit: cover !important;
+
+    border-radius: 12px;
+
+    border: 2px solid #7b2cff;
+
+    display: block;
+}
+
+.academy-brand span {
+    font-size: 27px;
+
+    font-weight: bold;
+
+    color: #0066cc;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   متن سمت چپ
+========================================= */
+
+.academy-description {
+    text-align: right;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    color: #25204a;
+
+    line-height: 1.6;
+}
+
+.academy-description small {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 16px;
+
+    font-weight: normal;
+
+    color: #555;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   خط بین هدر و محتوای سایت
+========================================= */
+
+.site-header {
+    padding-top: 25px;
+}
+
+
+/* =========================================
+   عنوان بخش دوره‌ها
+========================================= */
+
+.courses + hr {
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   موبایل
+========================================= */
+
+@media (max-width: 700px) {
+
+    .academy-topbar {
+        padding: 12px 15px;
+    }
+
+    .academy-brand img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    .academy-brand span {
+        font-size: 18px;
+    }
+
+    .academy-description {
+        font-size: 17px;
+    }
+
+    .academy-description small {
+        font-size: 12px;
+    }
+}
