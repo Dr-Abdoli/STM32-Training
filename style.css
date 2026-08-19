@@ -1396,3 +1396,8 @@ hr {
 
     border-radius: 10px;
 }
+
+
+.hero::after {
+    display: none !important;
+}
