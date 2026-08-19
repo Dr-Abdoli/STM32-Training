@@ -1347,3 +1347,10 @@ hr {
 .top-menu {
     border-bottom: none !important;
 }
+
+
+
+/* حذف خط زیر هدر بالایی */
+.site-header {
+    border-bottom: none !important;
+}
