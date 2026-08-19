@@ -1556,7 +1556,8 @@ hr {
    درخواست اجرای پروژه
    ========================= */
 
-.project-request {
+
+   .project-request {
     position: absolute;
     right: 25px;
 
@@ -1572,6 +1573,8 @@ hr {
 
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
+
 
 .project-request strong {
     display: block;
