@@ -1376,3 +1376,12 @@ hr {
 
     opacity: 0.9;
 }
+
+
+
+/* انتقال خط تزئینی به وسط */
+.hero::after {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+}
