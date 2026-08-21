@@ -1923,3 +1923,88 @@ hr {
 
     box-sizing: border-box !important;
 }
+
+
+
+
+/* =========================================
+   تنظیم نهایی چیدمان هدر
+   سه بخش کاملاً جدا از هم
+   ========================================= */
+
+.site-header {
+    position: relative !important;
+
+    min-height: 230px !important;
+
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================
+   بخش وسط
+   STM32 Academy
+   ========================================= */
+
+.site-header > h1,
+.site-header > h2,
+.site-header > p {
+    width: 360px !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    position: relative !important;
+
+    z-index: 20 !important;
+}
+
+
+/* =========================================
+   کادر متحرک سمت چپ
+   ========================================= */
+
+.project-animated {
+    position: absolute !important;
+
+    left: 120px !important;
+    right: auto !important;
+
+    top: 20px !important;
+
+    width: 300px !important;
+    max-width: 300px !important;
+
+    min-height: 140px !important;
+
+    box-sizing: border-box !important;
+
+    z-index: 10 !important;
+}
+
+
+/* =========================================
+   کادر سمت راست
+   ========================================= */
+
+.project-request {
+    position: absolute !important;
+
+    right: 20px !important;
+    left: auto !important;
+
+    top: 0 !important;
+
+    width: 400px !important;
+    max-width: 400px !important;
+
+    height: 180px !important;
+    min-height: 180px !important;
+
+    box-sizing: border-box !important;
+
+    z-index: 10 !important;
+}
