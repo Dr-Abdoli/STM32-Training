@@ -1675,26 +1675,26 @@ hr {
 
 /* =========================
    بزرگ‌تر کردن کادر پروژه
-========================= */
+   ========================= */
 
 .project-request {
-    right: 20px;
-    top: 15px;
+    right: 15px;
+    top: 10px;
 
-    width: 290px;
-    min-height: 130px;
+    width: 350px;
+    min-height: 145px;
 
-    padding: 25px 30px;
+    padding: 28px 35px;
 
     box-sizing: border-box;
 }
 
 .project-request strong {
-    font-size: 16px;
-    margin-bottom: 12px;
+    font-size: 17px;
+    margin-bottom: 15px;
 }
 
 .project-request a {
-    padding: 9px 18px;
-    font-size: 14px;
+    padding: 11px 22px;
+    font-size: 15px;
 }
