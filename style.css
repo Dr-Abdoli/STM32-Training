@@ -1735,7 +1735,7 @@ hr {
 
     transform: translateX(-30px);
 
-    animation: projectBoxShow 4s ease-in-out infinite;
+    animation: projectBoxShow 0.5s ease-in-out infinite;
 }
 
 .project-animated strong {
