@@ -2008,3 +2008,293 @@ hr {
 
     z-index: 10 !important;
 }
+
+
+
+/* =====================================================
+   اصلاح نهایی کادرهای هدر + حالت موبایل
+   این قسمت باید آخرین کد CSS باشد
+   ===================================================== */
+
+
+/* =========================
+   دسکتاپ
+   ========================= */
+
+@media (min-width: 801px) {
+
+    .site-header {
+        position: relative !important;
+        min-height: 230px !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* محتوای وسط */
+    .site-header > h1,
+    .site-header > h2,
+    .site-header > p {
+        width: 360px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        position: relative !important;
+        z-index: 20 !important;
+    }
+
+    /* کادر سمت چپ */
+    .project-animated {
+        position: absolute !important;
+        left: 120px !important;
+        right: auto !important;
+        top: 20px !important;
+
+        width: 300px !important;
+        max-width: 300px !important;
+        min-height: 140px !important;
+
+        box-sizing: border-box !important;
+        z-index: 10 !important;
+    }
+
+    /* کادر سمت راست */
+    .project-request {
+        position: absolute !important;
+        right: 20px !important;
+        left: auto !important;
+        top: 0 !important;
+
+        width: 400px !important;
+        max-width: 400px !important;
+        height: 180px !important;
+        min-height: 180px !important;
+
+        box-sizing: border-box !important;
+        z-index: 10 !important;
+    }
+}
+
+
+/* =====================================================
+   موبایل
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+    /* هدر اصلی */
+    .site-header {
+        position: relative !important;
+
+        min-height: 180px !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+
+        box-sizing: border-box !important;
+
+        display: grid !important;
+
+        grid-template-columns: 30% 40% 30% !important;
+
+        align-items: start !important;
+
+        width: 100% !important;
+    }
+
+
+    /* =================================
+       محتوای وسط
+       ================================= */
+
+    .site-header > h1,
+    .site-header > h2,
+    .site-header > p {
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        position: relative !important;
+
+        z-index: 20 !important;
+
+        grid-column: 2 !important;
+
+        text-align: center !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .site-header > h1 {
+        font-size: 22px !important;
+    }
+
+    .site-header > h2 {
+        font-size: 16px !important;
+    }
+
+    .site-header > p {
+        font-size: 12px !important;
+    }
+
+
+    /* =================================
+       کادر سمت چپ
+       ================================= */
+
+    .project-animated {
+
+        position: absolute !important;
+
+        left: 2% !important;
+        right: auto !important;
+
+        top: 10px !important;
+
+        width: 28% !important;
+        max-width: none !important;
+
+        min-height: 75px !important;
+        height: auto !important;
+
+        padding: 8px 5px !important;
+
+        box-sizing: border-box !important;
+
+        z-index: 5 !important;
+
+        transform: none !important;
+    }
+
+
+    .project-animated strong {
+        font-size: 10px !important;
+        line-height: 1.5 !important;
+
+        margin-bottom: 3px !important;
+    }
+
+
+    .project-animated p {
+        font-size: 8px !important;
+        line-height: 1.5 !important;
+    }
+
+
+    /* =================================
+       کادر سمت راست
+       ================================= */
+
+    .project-request {
+
+        position: absolute !important;
+
+        right: 2% !important;
+        left: auto !important;
+
+        top: 10px !important;
+
+        width: 28% !important;
+        max-width: none !important;
+
+        height: auto !important;
+        min-height: 75px !important;
+
+        padding: 8px 5px !important;
+
+        box-sizing: border-box !important;
+
+        z-index: 5 !important;
+    }
+
+
+    .project-request strong {
+
+        font-size: 10px !important;
+
+        line-height: 1.5 !important;
+
+        margin-bottom: 5px !important;
+    }
+
+
+    .project-request a {
+
+        padding: 5px 7px !important;
+
+        font-size: 8px !important;
+
+        border-radius: 5px !important;
+    }
+
+
+    /* =================================
+       دوره‌ها در موبایل هم 3 ستونه
+       ================================= */
+
+    .courses {
+
+        display: grid !important;
+
+        grid-template-columns: repeat(3, 1fr) !important;
+
+        gap: 8px !important;
+
+        width: 96% !important;
+
+        max-width: none !important;
+
+        margin: 20px auto !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    .course-card {
+
+        width: auto !important;
+
+        min-width: 0 !important;
+
+        padding: 15px 5px !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 10px !important;
+    }
+
+
+    .course-icon {
+
+        width: 38px !important;
+        height: 38px !important;
+
+        font-size: 18px !important;
+
+        margin-bottom: 8px !important;
+    }
+
+
+    .course-card h3 {
+
+        font-size: 15px !important;
+
+        margin: 5px 0 8px !important;
+    }
+
+
+    .course-card p {
+
+        font-size: 10px !important;
+
+        line-height: 1.8 !important;
+
+        margin: 0 !important;
+    }
+
+
+    /* منوی شناور در موبایل حذف شود */
+    .side-menu {
+        display: none !important;
+    }
+}
