@@ -2342,3 +2342,80 @@ hr {
         overflow-x: auto !important;
     }
 }
+
+
+
+/* =========================================
+   تنظیم نهایی بخش پایانی سایت
+   همه اطلاعات تماس در یک ردیف
+========================================= */
+
+/* منوی خانه، درباره من، تماس با ما */
+.footer-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 30px !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+}
+
+/* هر لینک منو */
+.footer-menu a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+}
+
+/* بخش اطلاعات تماس */
+.footer-info {
+    text-align: center !important;
+}
+
+/* عنوان «تماس با ما» جدا و بالای اطلاعات */
+.footer-info h2 {
+    display: block !important;
+    margin: 20px 0 !important;
+}
+
+/* شماره تماس و ایمیل در یک ردیف */
+.footer-info p {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 15px !important;
+    white-space: nowrap !important;
+}
+
+/* اگر شماره یا ایمیل به صورت لینک باشند */
+.footer-info a {
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    margin: 0 15px !important;
+}
+
+
+/* =========================================
+   موبایل
+========================================= */
+
+@media (max-width: 700px) {
+
+    .footer-menu {
+        gap: 10px !important;
+        font-size: 11px !important;
+        overflow-x: auto !important;
+    }
+
+    .footer-info p,
+    .footer-info a {
+        margin: 0 5px !important;
+        font-size: 11px !important;
+    }
+
+}
