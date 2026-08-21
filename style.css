@@ -1896,3 +1896,30 @@ hr {
     left: 100px !important;
     right: auto !important;
 }
+
+
+
+
+/* =========================================
+   جلوگیری از افتادن کادرها روی بخش وسط
+   ========================================= */
+
+.project-animated {
+    left: 2% !important;
+    width: 27% !important;
+    max-width: 330px !important;
+}
+
+.project-request {
+    right: 2% !important;
+    width: 27% !important;
+    max-width: 500px !important;
+}
+
+/* فضای امن برای عنوان وسط */
+.site-header {
+    padding-left: 30% !important;
+    padding-right: 30% !important;
+
+    box-sizing: border-box !important;
+}
