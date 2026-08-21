@@ -2419,3 +2419,28 @@ hr {
     }
 
 }
+
+
+
+/* =========================================
+   ردیف نهایی پایین سایت
+========================================= */
+
+.footer-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 30px !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+}
+
+.footer-menu a,
+.footer-menu span {
+    margin: 0 !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+}
