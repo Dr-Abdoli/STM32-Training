@@ -1786,3 +1786,104 @@ hr {
     }
 
 }
+
+
+
+
+/* =========================================
+   تنظیم واکنش‌گرا برای کادرهای دو طرف
+   STM32 Academy
+   ========================================= */
+
+.site-header {
+    position: relative !important;
+}
+
+
+/* کادر سمت چپ */
+
+.project-animated {
+    position: absolute !important;
+
+    left: 2% !important;
+    right: auto !important;
+
+    top: 20px !important;
+
+    width: 28% !important;
+    max-width: 360px !important;
+    min-height: 140px !important;
+
+    padding: 25px 20px !important;
+
+    box-sizing: border-box !important;
+
+    z-index: 90 !important;
+}
+
+
+/* کادر سمت راست */
+
+.project-request {
+    position: absolute !important;
+
+    right: 2% !important;
+    left: auto !important;
+
+    top: 0 !important;
+
+    width: 28% !important;
+    max-width: 520px !important;
+
+    height: 220px !important;
+    min-height: 220px !important;
+
+    padding: 45px 35px !important;
+
+    box-sizing: border-box !important;
+
+    z-index: 100 !important;
+}
+
+
+/* =========================================
+   اندازه مناسب در صفحه‌های متوسط
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+    .project-animated {
+        left: 3% !important;
+        width: 25% !important;
+        font-size: 14px;
+    }
+
+    .project-request {
+        right: 3% !important;
+        width: 25% !important;
+    }
+
+}
+
+
+/* =========================================
+   موبایل
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .project-animated,
+    .project-request {
+        position: relative !important;
+
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+
+        width: 90% !important;
+        max-width: 500px !important;
+
+        margin: 20px auto !important;
+    }
+
+}
