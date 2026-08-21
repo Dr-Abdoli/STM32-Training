@@ -1887,3 +1887,12 @@ hr {
     }
 
 }
+
+
+
+/* جابه‌جایی کادر متحرک به سمت راست */
+
+.project-animated {
+    left: 100px !important;
+    right: auto !important;
+}
