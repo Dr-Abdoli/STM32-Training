@@ -1678,23 +1678,23 @@ hr {
    ========================= */
 
 .project-request {
-    right: 10px !important;
-    top: 5px !important;
+    right: 5px !important;
+    top: 0 !important;
 
-    width: 450px !important;
-    min-height: 180px !important;
+    width: 520px !important;
+    min-height: 210px !important;
 
-    padding: 35px 40px !important;
+    padding: 40px 45px !important;
 
     box-sizing: border-box !important;
 }
 
 .project-request strong {
-    font-size: 22px !important;
-    margin-bottom: 22px !important;
+    font-size: 26px !important;
+    margin-bottom: 28px !important;
 }
 
 .project-request a {
-    padding: 13px 28px !important;
-    font-size: 18px !important;
+    padding: 16px 35px !important;
+    font-size: 21px !important;
 }
