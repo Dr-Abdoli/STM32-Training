@@ -1674,27 +1674,62 @@ hr {
 
 
 /* =========================
-   بزرگ‌تر کردن کادر پروژه
+   کادر پروژه - نسخه نهایی
    ========================= */
 
+.site-header {
+    position: relative;
+}
+
 .project-request {
-    right: 15px;
-    top: 10px;
+    position: absolute !important;
 
-    width: 350px;
-    min-height: 145px;
+    right: 15px !important;
+    top: 10px !important;
 
-    padding: 28px 35px;
+    width: 400px !important;
+    min-height: 160px !important;
 
-    box-sizing: border-box;
+    padding: 30px 35px !important;
+
+    box-sizing: border-box !important;
+
+    background: linear-gradient(135deg, #eef6ff, #f5efff);
+
+    border: 1px solid #d6c7ff;
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+
+    z-index: 10;
 }
 
 .project-request strong {
-    font-size: 17px;
-    margin-bottom: 15px;
+    display: block;
+
+    font-size: 18px !important;
+
+    margin-bottom: 18px !important;
+
+    color: #173b72;
 }
 
 .project-request a {
-    padding: 11px 22px;
-    font-size: 15px;
+    display: inline-block;
+
+    padding: 11px 25px !important;
+
+    font-size: 15px !important;
+
+    background: linear-gradient(90deg, #0066cc, #7b2cff);
+
+    color: white;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-weight: bold;
 }
