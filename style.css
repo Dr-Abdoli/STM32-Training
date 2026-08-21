@@ -2298,3 +2298,47 @@ hr {
         display: none !important;
     }
 }
+
+
+
+
+/* =========================================
+   فوتر - همه موارد در یک ردیف افقی
+========================================= */
+
+.footer-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 30px !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+}
+
+.footer-menu a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+}
+
+/* ایمیل هم کنار بقیه قرار بگیرد */
+.footer-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+/* موبایل */
+@media (max-width: 700px) {
+    .footer-menu {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 10px !important;
+        font-size: 11px !important;
+        overflow-x: auto !important;
+    }
+}
