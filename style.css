@@ -2444,3 +2444,33 @@ hr {
     display: inline-flex !important;
     align-items: center !important;
 }
+
+
+/* =========================================
+   باکس مقدمات و راه‌اندازی STM32
+   ========================================= */
+
+.intro-card {
+    grid-column: 1 / -1;
+
+    background: linear-gradient(135deg, #eef7ff, #f5f0ff);
+
+    border-top: 5px solid #0066cc;
+
+    padding: 25px 30px;
+
+    box-sizing: border-box;
+}
+
+.intro-card .course-icon {
+    color: #0066cc;
+}
+
+.intro-card h3 {
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+.intro-card p {
+    margin: 6px 0;
+}
