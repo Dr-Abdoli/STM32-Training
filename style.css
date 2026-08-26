@@ -2451,7 +2451,7 @@ hr {
    ========================================= */
 
 .intro-card {
-    grid-column: 1 / -1;
+    
 
     background: linear-gradient(135deg, #eef7ff, #f5f0ff);
 
