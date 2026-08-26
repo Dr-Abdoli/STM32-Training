@@ -2535,3 +2535,9 @@ hr {
 
 
 @media (max-width: 800px)
+
+
+.courses {
+    max-width: 850px !important;
+    gap: 18px !important;
+}
