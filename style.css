@@ -2557,8 +2557,8 @@ hr {
 
 .path-card {
     width: 28% !important;
-    height: 220px !important;
-    min-height: 220px !important;
+    height: 270px !important;
+    min-height: 270px !important;
     box-sizing: border-box !important;
     vertical-align: top !important;
 }
