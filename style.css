@@ -1870,7 +1870,7 @@ hr {
    موبایل
    ========================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
     .project-animated,
     .project-request {
@@ -2078,7 +2078,7 @@ hr {
    موبایل
    ===================================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
     /* هدر اصلی */
     .site-header {
