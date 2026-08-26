@@ -2552,3 +2552,23 @@ hr {
 
 }
 
+
+
+
+.path-card {
+    width: 28% !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    box-sizing: border-box !important;
+    vertical-align: top !important;
+}
+
+
+@media (max-width: 600px) {
+    .path-card {
+        width: 90% !important;
+        height: auto !important;
+        min-height: 180px !important;
+    }
+}
+
