@@ -2537,9 +2537,19 @@ hr {
 @media (max-width: 800px)
 
 
-.courses {
-    max-width: 1000px !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    gap: 18px !important;
+@media (min-width: 801px) {
+
+    .courses {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 18px !important;
+        max-width: 1000px !important;
+        margin: 30px auto !important;
+    }
+
+    .intro-card {
+        grid-column: auto !important;
+    }
+
 }
 
