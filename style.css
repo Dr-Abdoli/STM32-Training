@@ -2538,6 +2538,11 @@ hr {
 
 
 .courses {
-    max-width: 850px !important;
+    max-width: 1000px !important;
+    grid-template-columns: repeat(4, 1fr) !important;
     gap: 18px !important;
+}
+
+.intro-card {
+    grid-column: auto !important;
 }
