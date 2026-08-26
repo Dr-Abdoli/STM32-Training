@@ -2532,3 +2532,6 @@ hr {
     line-height: 2;
     margin: 5px 0;
 }
+
+
+@media (max-width: 800px)
