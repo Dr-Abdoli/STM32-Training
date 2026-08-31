@@ -2598,3 +2598,15 @@ hr {
     background: linear-gradient(145deg, #fff3e6, #ffffff);
     border-top: 5px solid #f59e0b;
 }
+
+
+
+.session-video {
+    display: block;
+    width: 100%;
+    max-width: 630px;
+    height: auto;
+    margin: 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
