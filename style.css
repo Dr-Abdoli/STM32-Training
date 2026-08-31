@@ -2630,3 +2630,23 @@ hr {
     background: #eaf7ff;
     border-top: 3px solid #0284c7;
 }
+
+
+
+
+/* رنگ کارت‌های جدید دوره‌ها */
+
+.courses .interrupt-card {
+    background: #f3edff !important;
+    border-top: 3px solid #7c3aed !important;
+}
+
+.courses .debounce-card {
+    background: #fff4e8 !important;
+    border-top: 3px solid #f59e0b !important;
+}
+
+.courses .counter-card {
+    background: #eaf7ff !important;
+    border-top: 3px solid #0284c7 !important;
+}
