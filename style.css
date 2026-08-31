@@ -2610,3 +2610,17 @@ hr {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
+
+
+
+/* رنگ کارت Interrupt */
+.interrupt-card {
+    background: #f3edff;
+    border-top: 3px solid #7c3aed;
+}
+
+/* رنگ کارت Debounce */
+.debounce-card {
+    background: #fff4e8;
+    border-top: 3px solid #f59e0b;
+}
