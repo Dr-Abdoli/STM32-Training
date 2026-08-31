@@ -2624,3 +2624,9 @@ hr {
     background: #fff4e8;
     border-top: 3px solid #f59e0b;
 }
+
+/* رنگ کارت Counter */
+.counter-card {
+    background: #eaf7ff;
+    border-top: 3px solid #0284c7;
+}
