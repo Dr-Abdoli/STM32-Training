@@ -1,0 +1,1142 @@
+1
+00:00:04,240 --> 00:00:12,200
+In the name of God. We are starting
+the third session of our course.
+
+2
+00:00:12,200 --> 00:00:22,279
+I hope it will be useful. In this session,
+we are going to discuss interrupts
+
+3
+00:00:22,279 --> 00:00:30,759
+or, in other words, interrupts, and see
+what the concept of an interrupt actually is.
+
+4
+00:00:30,759 --> 00:00:37,399
+We will also see what we can do with it,
+and in the project we want to implement
+
+5
+00:00:37,399 --> 00:00:46,160
+in this section, our goal is to use a push button
+to trigger one of the microcontroller pins
+
+6
+00:00:46,160 --> 00:00:52,440
+which we previously configured as an
+external interrupt, and toggle our LED,
+
+7
+00:00:52,440 --> 00:01:00,239
+meaning turning it off and on.
+
+8
+00:01:01,680 --> 00:01:09,080
+First of all, we need to understand what
+an interrupt is and what its purpose is
+
+9
+00:01:09,080 --> 00:01:16,119
+in programming and microcontrollers.
+Let me give you a simple example.
+
+10
+00:01:16,119 --> 00:01:23,960
+In the previous sessions I told you that
+the CPU's job is to execute the program.
+
+11
+00:01:23,960 --> 00:01:32,600
+The CPU is responsible for executing the program.
+Now, when we write a program,
+
+12
+00:01:32,600 --> 00:01:39,600
+how is it executed? When we program the
+microcontroller, the program starts
+
+13
+00:01:39,600 --> 00:01:45,200
+from the top and is executed line by line,
+moving downward.
+
+14
+00:01:45,200 --> 00:01:51,600
+It continues from the top to the bottom
+in order.
+
+15
+00:01:51,600 --> 00:02:00,600
+Now, in the middle of the program, suppose
+I write an instruction saying that if a switch
+
+16
+00:02:00,600 --> 00:02:08,239
+or push button is pressed, it should
+toggle an LED or perform some other action.
+
+17
+00:02:08,239 --> 00:02:14,560
+But perhaps I do not press that switch
+or push button for ten days.
+
+18
+00:02:14,560 --> 00:02:20,160
+Every time the program runs from top to bottom,
+it still has to check it,
+
+19
+00:02:20,160 --> 00:02:25,440
+to see whether the switch has been pressed
+or not before doing the required action.
+
+20
+00:02:25,440 --> 00:02:30,840
+Then it continues executing the next line,
+and again, from the top,
+
+21
+00:02:30,840 --> 00:02:36,360
+when it reaches this point, it checks again
+whether the switch has been pressed,
+
+22
+00:02:36,360 --> 00:02:45,879
+and so on. This process can become so time-consuming
+that it is not efficient at all.
+
+23
+00:02:45,879 --> 00:02:55,239
+This is where the role of the interrupt becomes
+important. How does it work?
+
+24
+00:02:55,239 --> 00:02:59,519
+I use an interrupt and configure one of the pins
+as an external interrupt.
+
+25
+00:02:59,519 --> 00:03:08,200
+Now, when the program runs from top to bottom,
+it no longer needs to check that line.
+
+26
+00:03:08,200 --> 00:03:14,680
+That line is handled by the interrupt,
+while the following lines continue to execute.
+
+27
+00:03:14,680 --> 00:03:23,760
+The other lines continue to be checked
+from top to bottom, and only the part
+
+28
+00:03:23,760 --> 00:03:31,360
+related to the event is placed inside
+a function called a callback,
+
+29
+00:03:31,360 --> 00:03:38,879
+which I will explain later. When the switch
+or push button is pressed, at that moment
+
+30
+00:03:38,879 --> 00:03:47,239
+the CPU spends its time handling that event.
+So, as I said, interrupts have a very
+
+31
+00:03:47,239 --> 00:03:53,319
+important role in timing and other applications.
+I will explain their features in the next slide.
+
+32
+00:03:53,319 --> 00:04:00,680
+So, the concept of an interrupt
+is basically this:
+
+33
+00:04:00,680 --> 00:04:05,799
+a program normally runs by polling;
+it executes line by line from top to bottom,
+
+34
+00:04:05,799 --> 00:04:12,400
+and when it finishes, it starts again from the top.
+If there is no interrupt,
+
+35
+00:04:12,400 --> 00:04:16,759
+it keeps checking an instruction that we may
+hardly ever need,
+
+36
+00:04:16,759 --> 00:04:21,799
+even if we have no use for it for a long time.
+With an interrupt, we define it
+
+37
+00:04:21,799 --> 00:04:30,759
+so that it does not have to keep checking;
+it is checked only when the event actually occurs,
+
+38
+00:04:31,520 --> 00:04:36,360
+for example, when a push button is pressed.
+
+39
+00:04:36,360 --> 00:04:42,960
+So, without an interrupt, the processor,
+or CPU, has to keep checking that line,
+
+40
+00:04:42,960 --> 00:04:48,720
+but with an interrupt, when the event occurs,
+the CPU handles it,
+
+41
+00:04:48,720 --> 00:04:52,800
+so the program becomes faster,
+more organized, and lower-power.
+
+42
+00:04:53,199 --> 00:04:59,479
+For today's project, which we are going to
+demonstrate both in programming and in practice,
+
+43
+00:04:59,479 --> 00:05:05,240
+we press a switch so that the LED toggles
+or changes state. The things we need are:
+
+44
+00:05:05,240 --> 00:05:10,880
+a push button, an interrupt in the program,
+and an LED, or light-emitting diode,
+
+45
+00:05:10,880 --> 00:05:17,199
+which we will use in the hardware.
+We will also use a Blue Pill board,
+
+46
+00:05:17,199 --> 00:05:23,919
+and the ST-LINK is also needed for programming.
+
+47
+00:05:23,919 --> 00:05:31,919
+First, we configure CubeMX.
+Since I do not want to spend time on this part,
+
+48
+00:05:31,919 --> 00:05:36,319
+I have already created
+the project.
+
+49
+00:05:36,319 --> 00:05:45,199
+I created a new project based on the
+STM32F103C8T6.
+
+50
+00:05:45,199 --> 00:05:50,560
+Here, to define our interrupt,
+there are several options
+
+51
+00:05:50,560 --> 00:05:54,960
+that we need to configure. First,
+I set an LED pin as an output.
+
+52
+00:05:54,960 --> 00:06:00,160
+What does that mean? As you can see here,
+I configure this pin as an output
+
+53
+00:06:00,160 --> 00:06:06,280
+so that when the interrupt is triggered,
+the LED connected to this pin
+
+54
+00:06:06,280 --> 00:06:11,560
+can be turned on and off when the switch
+is pressed.
+
+55
+00:06:11,560 --> 00:06:18,840
+I also configure another pin specifically
+for an external interrupt.
+
+56
+00:06:18,840 --> 00:06:24,319
+For example, I configure PA0
+as an external interrupt,
+
+57
+00:06:24,319 --> 00:06:29,759
+so the push button should be connected
+to this pin.
+
+58
+00:06:29,759 --> 00:06:36,599
+Whenever the button is pressed,
+the interrupt on this pin is triggered.
+
+59
+00:06:36,599 --> 00:06:43,800
+There is also the rising edge and falling edge,
+or trigger, which we will discuss in detail
+
+60
+00:06:43,800 --> 00:06:50,160
+on the next slide. There is also NVIC,
+which is used to enable and manage GPIO interrupts.
+
+61
+00:06:50,160 --> 00:06:55,759
+We will discuss that in the following slides.
+These are the general settings.
+
+62
+00:06:55,759 --> 00:07:00,800
+We will go through them one by one
+so that we can understand the other concepts.
+
+63
+00:07:00,800 --> 00:07:07,400
+What is NVIC? NVIC is responsible
+for managing and enabling processor interrupts.
+
+64
+00:07:07,400 --> 00:07:15,120
+What does that mean? Let me open CubeMX again
+and go down to the GPIO section.
+
+65
+00:07:16,919 --> 00:07:23,360
+Here we selected two options:
+one is PA0 as an interrupt,
+
+66
+00:07:23,360 --> 00:07:30,479
+and the other is PA3 as an output
+so that we can toggle the LED using this pin.
+
+67
+00:07:30,479 --> 00:07:36,960
+First, let's configure PA0
+and see what settings it has.
+
+68
+00:07:36,960 --> 00:07:45,080
+Let's see what settings PA0 has.
+As you can see, first I will configure NVIC,
+
+69
+00:07:45,080 --> 00:07:50,800
+which I mentioned in the slide.
+First, we need to enable
+
+70
+00:07:50,800 --> 00:08:00,560
+the external interrupt so that this pin
+becomes active as external interrupt 0.
+
+71
+00:08:00,560 --> 00:08:07,960
+So, in the GPIO and NVIC sections,
+we enable this option.
+
+72
+00:08:07,960 --> 00:08:14,840
+Next, remember that we previously discussed
+some concepts.
+
+73
+00:08:14,840 --> 00:08:22,280
+We discussed what pull-up and pull-down are,
+and based on that, we configure this section.
+
+74
+00:08:22,280 --> 00:08:30,440
+Now let's see what rising edge and falling edge
+mean. When we say rising edge,
+
+75
+00:08:30,440 --> 00:08:38,719
+it means the signal is increasing:
+it starts at 0 and then moves to 1.
+
+76
+00:08:38,719 --> 00:08:45,480
+That is the signal we define.
+And when we say falling edge,
+
+77
+00:08:45,480 --> 00:08:51,720
+it means that when the switch is pressed,
+the pin changes state.
+
+78
+00:08:51,720 --> 00:08:57,279
+The pin goes from 1 to 0 because it is
+falling, meaning it moves downward.
+
+79
+00:08:57,279 --> 00:09:04,279
+So it was at 1 and changes to 0.
+Keep in mind that we have these two states:
+
+80
+00:09:04,279 --> 00:09:10,600
+rising edge and falling edge.
+Based on these, we can define our pull-up or pull-down.
+
+81
+00:09:10,600 --> 00:09:16,760
+For example, if we use a falling edge,
+meaning the signal falls from high to low,
+
+82
+00:09:16,760 --> 00:09:23,160
+we should use a pull-up, because the input
+will be pulled down to 0 when the button is pressed.
+
+83
+00:09:23,160 --> 00:09:29,600
+And when we use a rising edge, meaning
+a rising transition triggers the interrupt,
+
+84
+00:09:29,600 --> 00:09:36,880
+we should use a pull-down arrangement.
+Why? Because the signal rises from 0 to 1,
+
+85
+00:09:36,880 --> 00:09:43,560
+so its initial value should be 0.
+Now, in the project, I configured it this way.
+
+86
+00:09:43,560 --> 00:09:51,079
+Many people make a small mistake here
+and their project does not work.
+
+87
+00:09:51,079 --> 00:09:57,360
+This diagram is very important.
+Pay close attention and wire your hardware
+
+88
+00:09:57,360 --> 00:10:02,160
+according to this diagram. Here, in the
+interrupt settings for PA0,
+
+89
+00:10:02,160 --> 00:10:07,399
+I changed PA0, and as I mentioned
+in the previous slide, I enabled NVIC.
+
+90
+00:10:07,399 --> 00:10:14,240
+Here, for PA0, we have a setting
+for external interrupt triggering:
+
+91
+00:10:14,240 --> 00:10:20,120
+rising edge, falling edge,
+or both,
+
+92
+00:10:20,120 --> 00:10:25,680
+which are the two modes we will work with.
+And in the pull-up/pull-down section,
+
+93
+00:10:25,680 --> 00:10:31,440
+we select the appropriate option
+according to this diagram.
+
+94
+00:10:31,440 --> 00:10:35,920
+If we want the opposite configuration,
+we need to reverse these settings.
+
+95
+00:10:35,920 --> 00:10:45,000
+For example, suppose I have a switch.
+This pin is PA0 of the STM32,
+
+96
+00:10:45,000 --> 00:10:51,200
+and the other side of the switch
+should be connected to 3.3 volts.
+
+97
+00:10:51,200 --> 00:10:58,480
+So how do I select the configuration?
+I select PA0, rising edge, and pull-down.
+
+98
+00:10:58,480 --> 00:11:02,480
+Why pull-down? As we said,
+for a rising edge, we use a pull-down.
+
+99
+00:11:02,480 --> 00:11:07,480
+Why do we use a pull-down?
+Because it must initially be at 0,
+
+100
+00:11:07,480 --> 00:11:12,680
+since I connect the other side
+to 3.3 volts. Someone may say,
+
+101
+00:11:12,680 --> 00:11:18,000
+"I don't want to do that. I'll use
+a falling edge instead."
+
+102
+00:11:18,000 --> 00:11:24,639
+Then, if a falling edge is selected,
+we must choose a pull-up,
+
+103
+00:11:24,639 --> 00:11:31,600
+and the other side is normally at 1.
+Then that side should be connected directly to ground.
+
+104
+00:11:31,600 --> 00:11:38,480
+So, according to this diagram,
+I use rising edge and pull-down.
+
+105
+00:11:38,480 --> 00:11:42,519
+Here I select the rising edge,
+and in this section I select pull-down.
+
+106
+00:11:42,519 --> 00:11:49,000
+Now let's return to the diagram.
+For PA3, this is a matter of preference.
+
+107
+00:11:49,000 --> 00:11:56,760
+I select PA3 as an output. In the hardware,
+I use a 1-kiloohm resistor
+
+108
+00:11:56,760 --> 00:12:03,000
+so that the LED does not draw too much current
+and burn out. I connect the 1-kiloohm resistor
+
+109
+00:12:03,000 --> 00:12:08,120
+to PA3 and connect the positive,
+or longer, LED lead to High,
+
+110
+00:12:08,120 --> 00:12:11,040
+because this side is logic high,
+or 3.3 volts,
+
+111
+00:12:11,040 --> 00:12:16,959
+and the other side is connected to ground.
+Someone may prefer to use Low instead.
+
+112
+00:12:16,959 --> 00:12:23,720
+If we choose Low, then the connection
+must be reversed. Either this configuration
+
+113
+00:12:23,720 --> 00:12:29,839
+or the second one I mentioned can be used.
+For our project, I chose this configuration.
+
+114
+00:12:29,839 --> 00:12:35,480
+So I set this part to High as well.
+We do not change any other settings.
+
+115
+00:12:35,480 --> 00:12:40,480
+So, in the GPIO section, there is an NVIC setting
+that must be enabled.
+
+116
+00:12:40,480 --> 00:12:46,839
+We enable it as external interrupt 0.
+Then in GPIO we selected rising edge
+
+117
+00:12:46,839 --> 00:12:52,360
+and pull-down, and for PA3 we selected High
+so that these settings can toggle the LED.
+
+118
+00:12:52,360 --> 00:12:57,680
+Now let's move down to the NVIC section.
+As you can see, there are settings here.
+
+119
+00:12:57,680 --> 00:13:03,720
+First, interrupt priorities.
+Suppose you want to configure five interrupts
+
+120
+00:13:03,720 --> 00:13:08,279
+and assign priorities to them. For example,
+when I press this push button, it should run first,
+
+121
+00:13:08,279 --> 00:13:13,199
+then the second push button should be handled,
+and then perhaps a sensor should be triggered.
+
+122
+00:13:13,199 --> 00:13:19,000
+Because of this, there is a priority
+system here. In our case,
+
+123
+00:13:19,000 --> 00:13:23,519
+we selected external interrupt 0.
+We set its priority to 1.
+
+124
+00:13:23,519 --> 00:13:29,040
+If there were two or three interrupts,
+we would also select priorities 2 and 3.
+
+125
+00:13:29,040 --> 00:13:32,240
+Here I set the priority to 1.
+
+126
+00:13:32,240 --> 00:13:40,199
+There are no other special settings here.
+RCC is for configuring the clock frequency.
+
+127
+00:13:40,199 --> 00:13:44,320
+I do not change it. I keep it internal
+and do not select an external clock.
+
+128
+00:13:44,320 --> 00:13:50,720
+So the 8 MHz internal clock is used
+for our frequency, which is sufficient.
+
+129
+00:13:50,720 --> 00:13:57,120
+There is no problem with that.
+I also set the system to Serial Wire mode
+
+130
+00:13:57,120 --> 00:14:04,720
+for programming and debugging, so PA14
+and PA13 are enabled for Serial Wire.
+
+131
+00:14:04,720 --> 00:14:12,240
+With these two enabled, and with external
+interrupt 0 configured here,
+
+132
+00:14:12,240 --> 00:14:19,000
+we have completed its settings.
+Then I also configured PA0
+
+133
+00:14:19,000 --> 00:14:25,519
+in this section, and here I configured
+the other PA0 settings.
+
+134
+00:14:25,519 --> 00:14:32,160
+PA0 has no other special settings.
+We can move on and create the project.
+
+135
+00:14:32,160 --> 00:14:37,600
+There is nothing else to configure,
+so we create our project.
+
+136
+00:14:37,600 --> 00:14:41,079
+We choose a name for it:
+Interrupt.
+
+137
+00:14:43,120 --> 00:14:50,160
+Then we save it in the appropriate location,
+for example, in a folder.
+
+138
+00:14:50,160 --> 00:14:59,399
+I already created an Interrupt folder here,
+so I place my project inside it.
+
+139
+00:14:59,399 --> 00:15:05,199
+In this section, I also select
+the project settings.
+
+140
+00:15:05,199 --> 00:15:13,399
+I choose the MDK-ARM toolchain
+and use the appropriate version.
+
+141
+00:15:13,399 --> 00:15:19,680
+Then I select my software package,
+which I have also placed on the website,
+
+142
+00:15:19,680 --> 00:15:25,360
+so you can use it as well.
+There is no need to use another package.
+
+143
+00:15:25,360 --> 00:15:29,560
+Here, you need to select the package.
+I come here
+
+144
+00:15:29,800 --> 00:15:34,720
+and select my package
+from this section.
+
+145
+00:15:34,720 --> 00:15:43,360
+It is a little crowded, so I need to find it.
+Yes, here it is. I select this package
+
+146
+00:15:43,360 --> 00:15:49,600
+as my package. There are no other settings,
+so this is the overall configuration.
+
+147
+00:15:49,600 --> 00:15:56,639
+Now I generate the code.
+Let's return to the slides.
+
+148
+00:15:56,639 --> 00:16:03,839
+So, we configured CubeMX.
+Here we discussed NVIC and how it works,
+
+149
+00:16:03,839 --> 00:16:09,639
+and we enabled it.
+We also discussed the NVIC section,
+
+150
+00:16:09,639 --> 00:16:14,120
+where interrupts need a priority order
+so that they are handled in sequence.
+
+151
+00:16:14,120 --> 00:16:21,800
+We fully explained rising and falling edges,
+and selected this configuration
+
+152
+00:16:21,800 --> 00:16:27,199
+as the implementation of our project.
+Now, before the Keil project finishes building,
+
+153
+00:16:27,199 --> 00:16:33,560
+which will take a little time,
+let's explain this part as well.
+
+154
+00:16:33,560 --> 00:16:41,800
+Now we want to use our interrupt function
+throughout the program.
+
+155
+00:16:41,800 --> 00:16:52,480
+I told you that the HAL function used
+to handle the interrupt uses this code.
+
+156
+00:16:52,480 --> 00:16:59,360
+In other words, it calls this callback,
+and then we place inside it
+
+157
+00:16:59,360 --> 00:17:06,240
+our LED command, which can toggle the LED
+or perform any other action.
+
+158
+00:17:06,240 --> 00:17:12,319
+We use that command so that the LED
+is toggled when the interrupt occurs.
+
+159
+00:17:12,319 --> 00:17:18,839
+For the first time, we select Open Project.
+If we later want to make changes in CubeMX,
+
+160
+00:17:20,240 --> 00:17:25,039
+we do not need to open the project again;
+we can just select the appropriate option.
+
+161
+00:17:25,039 --> 00:17:30,600
+The project will be generated.
+So this is the Keil section,
+
+162
+00:17:30,600 --> 00:17:37,559
+and this is the main file.
+For using the interrupt,
+
+163
+00:17:37,559 --> 00:17:47,919
+we can write our function in this section
+so that the main file does not become cluttered.
+
+164
+00:17:47,919 --> 00:17:55,600
+Here is the main section.
+There are some things that have already been defined.
+
+165
+00:17:55,600 --> 00:18:06,360
+As I mentioned, we can also write the project
+in this section, but because the project is small,
+
+166
+00:18:06,360 --> 00:18:12,640
+I will not write the interrupt code here.
+Regarding the main file,
+
+167
+00:18:12,640 --> 00:18:17,120
+CubeMX has already defined
+the initial values for PA3
+
+168
+00:18:17,120 --> 00:18:24,840
+according to the settings we made.
+For example, we set it to High.
+
+169
+00:18:24,840 --> 00:18:31,200
+It also configured PA0
+as pull-down and for a rising edge.
+
+170
+00:18:31,200 --> 00:18:38,280
+These settings have already been generated.
+We only need to add
+
+171
+00:18:38,280 --> 00:18:42,919
+the external interrupt command,
+which is the callback.
+
+172
+00:18:42,919 --> 00:18:51,480
+Normally, you should place this command
+here after the main initialization sections.
+
+173
+00:18:51,480 --> 00:18:55,360
+after the initialization code.
+I will copy this part here
+
+174
+00:18:55,360 --> 00:19:00,720
+to save time, like this.
+
+175
+00:19:00,720 --> 00:19:06,559
+So this function that we write here
+is called by the interrupt callback.
+
+176
+00:19:06,559 --> 00:19:12,480
+In other words, when an interrupt occurs,
+the callback invokes it.
+
+177
+00:19:12,480 --> 00:19:18,600
+If you actually press the push button,
+the CPU comes to this instruction
+
+178
+00:19:20,240 --> 00:19:27,120
+and executes it.
+Here we told it that when it enters the interrupt,
+
+179
+00:19:27,120 --> 00:19:32,640
+it should toggle the port pin,
+the PA3 pin.
+
+180
+00:19:32,640 --> 00:19:39,840
+So the HAL function has called the callback
+and checked whether pin 0,
+
+181
+00:19:39,840 --> 00:19:47,679
+which is PA0, was triggered.
+When the button is pressed,
+
+182
+00:19:47,679 --> 00:19:53,600
+this instruction says that if PA0
+is pressed or triggered,
+
+183
+00:19:53,600 --> 00:19:59,200
+then perform this action:
+toggle PA3.
+
+184
+00:19:59,200 --> 00:20:07,840
+This is the external interrupt callback.
+There is nothing special left in the program.
+
+185
+00:20:07,840 --> 00:20:16,679
+I will just build the program.
+There are some settings we always need to make,
+
+186
+00:20:16,679 --> 00:20:23,600
+which I did not mention here.
+We go to the Flash settings.
+
+187
+00:20:23,600 --> 00:20:29,320
+First, the debugger section should be set
+to ST-Link Debugger,
+
+188
+00:20:29,320 --> 00:20:35,080
+and the target should be set to the version
+I mentioned, or a later version,
+
+189
+00:20:35,080 --> 00:20:42,760
+so that this problem does not occur.
+Now we run it.
+
+190
+00:20:42,760 --> 00:20:53,000
+The first time, building it will take
+a little time.
+
+191
+00:20:53,000 --> 00:20:56,000
+And...
+
+192
+00:20:58,240 --> 00:21:06,360
+It should finish in a few seconds.
+We are waiting for the build process to finish.
+
+193
+00:21:06,360 --> 00:21:10,360
+We are waiting for it to complete.
+
+194
+00:21:13,120 --> 00:21:20,799
+Yes, it has finished here
+with no errors and no warnings.
+
+195
+00:21:20,799 --> 00:21:27,440
+Let me go back to the PowerPoint
+and see whether anything else remains.
+
+196
+00:21:27,440 --> 00:21:34,840
+We said that the interrupt occurs
+through this instruction.
+
+197
+00:21:34,840 --> 00:21:39,960
+In this section, I also mentioned that
+through this toggle operation,
+
+198
+00:21:39,960 --> 00:21:46,039
+we toggle PC13. If it is on, we turn it off;
+if it is off, we turn it on.
+
+199
+00:21:46,039 --> 00:21:53,520
+We do this by pressing the button.
+One very important point that I will mention briefly
+
+200
+00:21:53,520 --> 00:21:58,679
+is that debounce will have a separate session,
+and I have prepared the specific code
+
+201
+00:21:58,679 --> 00:22:07,640
+for debounce there for you to use.
+What is bouncing? When you press a button,
+
+202
+00:22:07,640 --> 00:22:12,360
+you may think you are pressing it only once,
+but over a very short period of time,
+
+203
+00:22:12,360 --> 00:22:17,240
+possibly a few milliseconds,
+the button may actually register several times.
+
+204
+00:22:17,240 --> 00:22:23,279
+You press it once, but because of the contact
+bouncing that creates the change of state,
+
+205
+00:22:23,279 --> 00:22:27,840
+the event may occur three or four times.
+As a result,
+
+206
+00:22:27,840 --> 00:22:33,320
+the LED may turn on and off three or four times.
+This is called bouncing.
+
+207
+00:22:33,320 --> 00:22:39,279
+We can also eliminate bouncing in hardware
+by designing a suitable RC circuit,
+
+208
+00:22:39,279 --> 00:22:44,159
+but that requires more components
+and makes the circuit more complicated.
+
+209
+00:22:44,159 --> 00:22:50,960
+We can also handle it in software.
+In a separate session, I have written the code
+
+210
+00:22:50,960 --> 00:22:57,520
+to completely debounce the push button,
+and this is used in many applications.
+
+211
+00:22:57,520 --> 00:23:01,200
+This is the debounce
+method.
+
+212
+00:23:01,200 --> 00:23:07,799
+As for the hardware connections,
+I explained them fully in the previous diagram.
+
+213
+00:23:07,799 --> 00:23:13,240
+I showed you how to connect the LED,
+how to connect the interrupt pin,
+
+214
+00:23:13,240 --> 00:23:17,559
+and why a resistor is needed
+to limit the current.
+
+215
+00:23:17,559 --> 00:23:23,760
+The grounds should also be common.
+Keep in mind that the Blue Pill ground
+
+216
+00:23:23,760 --> 00:23:29,559
+and the LED ground must be connected together.
+There is nothing else special here.
+
+217
+00:23:29,559 --> 00:23:39,240
+We have now run the program completely
+and everything worked without errors.
+
+218
+00:23:39,240 --> 00:23:47,279
+Now we want to load the program
+onto the microcontroller.
+
+219
+00:23:47,279 --> 00:23:53,520
+We load the program here
+so that it is completely transferred.
+
+220
+00:23:53,520 --> 00:24:01,039
+After the program has been loaded onto
+the microcontroller, we press the reset switch
+
+221
+00:24:01,039 --> 00:24:06,640
+on the Blue Pill.
+And here, as you can see,
+
+222
+00:24:06,640 --> 00:24:11,080
+it turns on once and off once.
+That brief change is because of
+
+223
+00:24:11,080 --> 00:24:18,840
+the same debounce issue.
+The wiring is also exactly as I explained.
+
+224
+00:24:18,840 --> 00:24:26,279
+Here we have PA0,
+which is connected with this yellow wire
+
+225
+00:24:26,279 --> 00:24:32,760
+to the push button.
+The other side of the push button
+
+226
+00:24:32,760 --> 00:24:37,919
+is connected to 3.3 volts.
+PA3 is also connected
+
+227
+00:24:37,919 --> 00:24:44,279
+through a 1-kiloohm resistor to the LED.
+The positive lead is connected to PA3,
+
+228
+00:24:44,279 --> 00:24:49,799
+and the negative lead is connected to ground.
+Now, by pressing the push button,
+
+229
+00:24:49,799 --> 00:24:57,200
+the LED turns on once. Again, there is the
+debounce issue, but once we handle it,
+
+230
+00:24:57,200 --> 00:25:00,200
+it will turn on and off once per press.
+Thank you, and may God protect you.
