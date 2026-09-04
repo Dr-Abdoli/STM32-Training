@@ -2775,13 +2775,18 @@ hr {
     box-sizing: border-box !important;
 }
 
-}
+
+
+
+
+
+
 
 
 
 /* =========================================
    تنظیم نهایی موبایل STM32 Academy
-   ========================================= */
+========================================= */
 
 @media (max-width: 700px) {
 
@@ -2789,7 +2794,6 @@ hr {
     .side-menu {
         display: flex !important;
         position: static !important;
-
         width: 100% !important;
         height: auto !important;
 
@@ -2826,7 +2830,7 @@ hr {
     }
 
 
-    /* هدر بالای سایت */
+    /* نوار بالای سایت */
     .academy-topbar {
         width: 100% !important;
 
@@ -2837,13 +2841,11 @@ hr {
         justify-content: center !important;
 
         gap: 8px !important;
-
         padding: 10px 8px !important;
 
         text-align: center !important;
         box-sizing: border-box !important;
     }
-
 
     .academy-brand {
         width: 100% !important;
@@ -2865,6 +2867,7 @@ hr {
     }
 
 
+    /* خوش آمدگویی */
     .academy-welcome {
         width: 100% !important;
         text-align: center !important;
@@ -2894,7 +2897,6 @@ hr {
         position: relative !important;
 
         width: 100% !important;
-
         min-height: 0 !important;
         height: auto !important;
 
@@ -2904,7 +2906,6 @@ hr {
 
         text-align: center !important;
     }
-
 
     .site-header > h1 {
         width: 100% !important;
@@ -2934,7 +2935,7 @@ hr {
     }
 
 
-    /* کادر سمت چپ */
+    /* کادر پروژه متحرک */
     .project-animated {
         position: static !important;
 
@@ -2945,7 +2946,6 @@ hr {
         height: auto !important;
 
         margin: 15px auto !important;
-
         padding: 15px !important;
 
         box-sizing: border-box !important;
@@ -2963,7 +2963,6 @@ hr {
         height: auto !important;
 
         margin: 10px auto !important;
-
         padding: 14px !important;
 
         box-sizing: border-box !important;
@@ -2979,42 +2978,9 @@ hr {
         padding: 8px 15px !important;
     }
 
-}
 
-}
-
-
-
-/* ================================
-   اصلاح نهایی نمایش موبایل
-================================ */
-
-@media (max-width: 700px) {
-
+    /* پس‌زمینه موبایل */
     body {
         background-color: #f5f5f5 !important;
     }
-
-    .site-header {
-        width: 100% !important;
-        min-height: auto !important;
-        padding: 18px 10px !important;
-        box-sizing: border-box !important;
-        text-align: center !important;
-    }
-
-    .project-animated,
-    .project-request {
-        position: relative !important;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        width: 90% !important;
-        max-width: 330px !important;
-        height: auto !important;
-        min-height: auto !important;
-        margin: 15px auto !important;
-        box-sizing: border-box !important;
-    }
-
 }
