@@ -2954,7 +2954,7 @@ hr {
 
     /* کادر پروژه دانشجویی */
     .project-request {
-        position: static !important;
+        position: fixed !important;
 
         width: 90% !important;
         max-width: 330px !important;
