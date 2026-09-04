@@ -2955,7 +2955,7 @@ hr {
     right: 5px !important;
     left: auto !important;
 
-    top: 10px !important;
+    top: 350px !important;
     bottom: auto !important;
 
     width: 125px !important;
@@ -2991,32 +2991,3 @@ hr {
 
 
 
-@media (max-width: 700px) {
-
-    .site-header {
-        position: relative !important;
-    }
-
-    .project-request {
-        position: absolute !important;
-
-        right: 5px !important;
-        left: auto !important;
-
-        top: 350px !important;
-        bottom: auto !important;
-
-        width: 125px !important;
-        max-width: 125px !important;
-
-        height: auto !important;
-        min-height: auto !important;
-
-        margin: 0 !important;
-        padding: 10px !important;
-
-        box-sizing: border-box !important;
-        z-index: 100 !important;
-    }
-
-}
