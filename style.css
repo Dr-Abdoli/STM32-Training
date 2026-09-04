@@ -2936,19 +2936,24 @@ hr {
 
 
     /* کادر پروژه متحرک */
-    .project-animated {
-        position: static !important;
+    .project-request {
+        position: absolute !important;
+        right: 5px !important;
+        left: auto !important;
+        top: 10px !important;
+        bottom: auto !important;
 
-        width: 90% !important;
-        max-width: 330px !important;
+        width: 125px !important;
+        max-width: 125px !important;
 
         min-height: auto !important;
         height: auto !important;
 
-        margin: 15px auto !important;
-        padding: 15px !important;
+        margin: 0 !important;
+        padding: 10px !important;
 
         box-sizing: border-box !important;
+        z-index: 100 !important;
     }
 
 
