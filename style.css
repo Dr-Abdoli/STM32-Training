@@ -2982,3 +2982,39 @@ hr {
 }
 
 }
+
+
+
+/* ================================
+   اصلاح نهایی نمایش موبایل
+================================ */
+
+@media (max-width: 700px) {
+
+    body {
+        background-color: #f5f5f5 !important;
+    }
+
+    .site-header {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 18px 10px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    .project-animated,
+    .project-request {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        width: 90% !important;
+        max-width: 330px !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 15px auto !important;
+        box-sizing: border-box !important;
+    }
+
+}
