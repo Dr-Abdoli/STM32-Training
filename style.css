@@ -2779,41 +2779,91 @@ hr {
 
 
 
-/* ============================= */
-/* اصلاح کامل نمایش موبایل */
-/* ============================= */
+/* =========================================
+   تنظیم نهایی موبایل STM32 Academy
+   ========================================= */
 
 @media (max-width: 700px) {
 
-    /* نوار بالایی */
-    .academy-topbar {
+    /* منوی بالایی */
+    .side-menu {
+        display: flex !important;
+        position: static !important;
+
+        width: 100% !important;
+        height: auto !important;
+
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+
+        padding: 6px 2px !important;
+        margin: 0 !important;
+
+        gap: 0 !important;
+        overflow: hidden !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .side-menu a {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        width: 100% !important;
+
+        width: 16.66% !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 3px 1px !important;
+
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+
+        white-space: nowrap !important;
         box-sizing: border-box !important;
-        padding: 12px 8px !important;
-        gap: 10px !important;
-        text-align: center !important;
     }
+
+
+    /* هدر بالای سایت */
+    .academy-topbar {
+        width: 100% !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 8px !important;
+
+        padding: 10px 8px !important;
+
+        text-align: center !important;
+        box-sizing: border-box !important;
+    }
+
 
     .academy-brand {
         width: 100% !important;
+
         display: flex !important;
-        justify-content: center !important;
         align-items: center !important;
+        justify-content: center !important;
+
         gap: 8px !important;
     }
 
     .academy-brand img {
-        width: 50px !important;
-        height: 50px !important;
+        width: 48px !important;
+        height: 48px !important;
     }
 
     .academy-brand span {
-        font-size: 20px !important;
+        font-size: 19px !important;
     }
+
 
     .academy-welcome {
         width: 100% !important;
@@ -2821,15 +2871,15 @@ hr {
     }
 
     .academy-welcome h2 {
-        font-size: 20px !important;
+        font-size: 19px !important;
         line-height: 1.6 !important;
         margin: 0 !important;
     }
 
     .academy-welcome p {
-        font-size: 13px !important;
+        font-size: 12px !important;
         line-height: 1.8 !important;
-        margin: 4px 0 !important;
+        margin: 3px 0 !important;
     }
 
     .academy-description {
@@ -2839,100 +2889,94 @@ hr {
     }
 
 
-    /* ============================= */
-    /* منوی اصلی در موبایل */
-    /* ============================= */
-
-    .side-menu {
-        display: flex !important;
-        position: static !important;
-        width: 100% !important;
-        height: auto !important;
-        box-sizing: border-box !important;
-
-        flex-direction: row !important;
-        justify-content: center !important;
-        align-items: center !important;
-
-        gap: 3px !important;
-        padding: 8px 3px !important;
-
-        overflow-x: auto !important;
-        overflow-y: hidden !important;
-
-        white-space: nowrap !important;
-    }
-
-    .side-menu a {
-        display: block !important;
-        min-width: 60px !important;
-
-        padding: 6px 5px !important;
-
-        font-size: 11px !important;
-        line-height: 1.5 !important;
-
-        text-align: center !important;
-        white-space: nowrap !important;
-
-        box-sizing: border-box !important;
-    }
-
-
-    /* ============================= */
     /* هدر اصلی */
-    /* ============================= */
-
     .site-header {
+        position: relative !important;
+
         width: 100% !important;
-        min-height: auto !important;
+
+        min-height: 0 !important;
+        height: auto !important;
+
+        padding: 18px 10px 15px !important;
+
         box-sizing: border-box !important;
 
-        padding: 20px 10px !important;
         text-align: center !important;
     }
 
-    .site-header h1 {
+
+    .site-header > h1 {
+        width: 100% !important;
+
         font-size: 28px !important;
-        line-height: 1.5 !important;
+        line-height: 1.4 !important;
+
+        margin: 0 0 5px !important;
     }
 
-    .site-header h2 {
-        font-size: 20px !important;
+    .site-header > h2 {
+        width: 100% !important;
+
+        font-size: 19px !important;
         line-height: 1.6 !important;
+
+        margin: 0 0 4px !important;
     }
 
-    .site-header p {
-        font-size: 14px !important;
+    .site-header > p {
+        width: 100% !important;
+
+        font-size: 13px !important;
         line-height: 1.8 !important;
+
+        margin: 0 !important;
     }
 
 
-    /* ============================= */
-    /* باکس پروژه */
-    /* ============================= */
+    /* کادر سمت چپ */
+    .project-animated {
+        position: static !important;
 
- .project-animated {
-    position: static !important;
-    width: 90% !important;
-    max-width: 500px !important;
-    margin: 15px auto !important;
-    box-sizing: border-box !important;
-}
+        width: 90% !important;
+        max-width: 330px !important;
 
-.project-request {
-    position: absolute !important;
-    right: 10px !important;
-    top: 380px !important;
+        min-height: auto !important;
+        height: auto !important;
 
-    width: 180px !important;
-    min-height: auto !important;
-    height: auto !important;
+        margin: 15px auto !important;
 
-    margin: 0 !important;
-    padding: 12px 10px !important;
+        padding: 15px !important;
 
-    box-sizing: border-box !important;
-}
+        box-sizing: border-box !important;
+    }
+
+
+    /* کادر پروژه دانشجویی */
+    .project-request {
+        position: static !important;
+
+        width: 90% !important;
+        max-width: 330px !important;
+
+        min-height: auto !important;
+        height: auto !important;
+
+        margin: 10px auto !important;
+
+        padding: 14px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    .project-request strong {
+        font-size: 16px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .project-request a {
+        font-size: 13px !important;
+        padding: 8px 15px !important;
+    }
 
 }
