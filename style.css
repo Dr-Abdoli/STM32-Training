@@ -2525,7 +2525,7 @@ hr {
 }
 
 
-@media (max-width: 800px)
+
 
 
 @media (min-width: 801px) {
@@ -2981,3 +2981,7 @@ hr {
 
 }
 
+
+body {
+    background: red !important;
+}
