@@ -3077,35 +3077,60 @@ hr {
 }
 
 
+/* =========================================
+   سه خط وسط هدر در موبایل
+   هر متن دقیقاً در یک ردیف
+========================================= */
+
 @media (max-width: 700px) {
 
-    .site-header h1 {
-        width: max-content !important;
+    .site-header > h1 {
+        display: block !important;
+        width: 100% !important;
         max-width: none !important;
         white-space: nowrap !important;
+        overflow: visible !important;
+
         font-size: 22px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        line-height: 1.4 !important;
+
+        margin: 0 0 5px 0 !important;
+        padding: 0 !important;
+
         text-align: center !important;
     }
 
-    .site-header h2 {
-        width: max-content !important;
+
+    .site-header > h2 {
+        display: block !important;
+        width: 100% !important;
         max-width: none !important;
         white-space: nowrap !important;
+        overflow: visible !important;
+
         font-size: 16px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        line-height: 1.5 !important;
+
+        margin: 0 0 5px 0 !important;
+        padding: 0 !important;
+
         text-align: center !important;
     }
 
-    .site-header p {
-        width: max-content !important;
+
+    .site-header > p {
+        display: block !important;
+        width: 100% !important;
         max-width: none !important;
         white-space: nowrap !important;
+        overflow: visible !important;
+
         font-size: 10px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        line-height: 1.5 !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
         text-align: center !important;
     }
 
