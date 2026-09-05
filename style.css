@@ -2985,3 +2985,131 @@ hr {
 
 
 
+/* =====================================================
+   اصلاح نهایی جای باکس پروژه در موبایل
+   قرارگیری روبروی «انجام پروژه‌های دانشجویی»
+===================================================== */
+
+@media (max-width: 700px) {
+
+    /* هدر اصلی */
+    .site-header {
+        position: relative !important;
+        min-height: 180px !important;
+        height: 180px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+
+    /* ==============================
+       باکس انجام پروژه‌های دانشجویی
+       سمت چپ
+    ============================== */
+
+    .project-animated {
+        position: absolute !important;
+
+        left: 2% !important;
+        right: auto !important;
+
+        top: 20px !important;
+
+        width: 28% !important;
+        max-width: none !important;
+
+        min-height: 100px !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 10px 5px !important;
+
+        box-sizing: border-box !important;
+
+        z-index: 10 !important;
+    }
+
+
+    /* ==============================
+       باکس پروژه دانشجویی
+       سمت راست
+       روبروی باکس سمت چپ
+    ============================== */
+
+    .project-request {
+        position: absolute !important;
+
+        right: 2% !important;
+        left: auto !important;
+
+        top: 20px !important;
+
+        bottom: auto !important;
+
+        width: 28% !important;
+        max-width: none !important;
+
+        height: auto !important;
+        min-height: 100px !important;
+
+        margin: 0 !important;
+        padding: 10px 5px !important;
+
+        box-sizing: border-box !important;
+
+        z-index: 10 !important;
+    }
+
+
+    /* متن باکس چپ */
+    .project-animated strong {
+        font-size: 10px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 4px !important;
+    }
+
+    .project-animated p {
+        font-size: 8px !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+    }
+
+
+    /* متن باکس راست */
+    .project-request strong {
+        font-size: 10px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 5px !important;
+    }
+
+    .project-request a {
+        font-size: 8px !important;
+        padding: 5px 6px !important;
+        border-radius: 5px !important;
+        white-space: nowrap !important;
+    }
+
+
+    /* ==============================
+       محتوای وسط
+       پایین‌تر از دو باکس
+    ============================== */
+
+    .site-header > h1,
+    .site-header > h2,
+    .site-header > p {
+
+        position: relative !important;
+
+        z-index: 20 !important;
+
+        width: 100% !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+
+        text-align: center !important;
+    }
+
+}
