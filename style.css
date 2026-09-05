@@ -3075,3 +3075,29 @@ hr {
         font-size: 12px !important;
     }
 }
+
+
+@media (max-width: 700px) {
+
+    .site-header > h1 {
+        width: auto !important;
+        white-space: nowrap !important;
+        font-size: 22px !important;
+        margin: 0 auto !important;
+    }
+
+    .site-header > h2 {
+        width: auto !important;
+        white-space: nowrap !important;
+        font-size: 16px !important;
+        margin: 4px auto !important;
+    }
+
+    .site-header > p {
+        width: auto !important;
+        white-space: nowrap !important;
+        font-size: 10px !important;
+        margin: 4px auto !important;
+    }
+
+}
