@@ -3135,3 +3135,47 @@ hr {
     }
 
 }
+
+
+
+/* =========================================
+   هم‌سطح کردن دقیق دو باکس در موبایل
+   مبنا: باکس سمت چپ
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* باکس سمت چپ — مبنا */
+    .project-animated {
+        position: absolute !important;
+        left: 2% !important;
+        right: auto !important;
+        top: 15px !important;
+
+        width: 28% !important;
+        min-height: 75px !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 8px 5px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    /* باکس سمت راست — دقیقاً هم‌سطح چپ */
+    .project-request {
+        position: absolute !important;
+        right: 2% !important;
+        left: auto !important;
+        top: 15px !important;
+
+        width: 28% !important;
+        min-height: 75px !important;
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 8px 5px !important;
+
+        box-sizing: border-box !important;
+    }
+}
