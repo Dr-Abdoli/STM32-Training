@@ -3179,3 +3179,18 @@ hr {
         box-sizing: border-box !important;
     }
 }
+
+
+
+@media (max-width: 700px) {
+
+    .project-animated {
+        top: 15px !important;
+    }
+
+    .project-request {
+        top: 15px !important;
+        transform: translateY(0) !important;
+    }
+
+}
