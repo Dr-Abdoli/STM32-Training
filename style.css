@@ -3253,3 +3253,28 @@ hr {
     }
 
 }
+
+
+
+/* =========================================
+   فقط وسط‌چین کردن خط تزئینی هدر
+   بدون تغییر جای دو باکس
+========================================= */
+
+@media (max-width: 700px) {
+
+    .site-header::after {
+        position: absolute !important;
+
+        left: 50% !important;
+        right: auto !important;
+
+        transform: translateX(-50%) !important;
+
+        margin: 25px 0 0 !important;
+
+        width: 120px !important;
+        height: 3px !important;
+    }
+
+}
