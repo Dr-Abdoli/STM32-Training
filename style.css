@@ -3257,24 +3257,39 @@ hr {
 
 
 /* =========================================
-   فقط وسط‌چین کردن خط تزئینی هدر
-   بدون تغییر جای دو باکس
+   اصلاح نهایی فقط خط وسط هدر
+   بدون تغییر دو باکس
 ========================================= */
 
 @media (max-width: 700px) {
 
     .site-header::after {
-        position: absolute !important;
+        content: "" !important;
 
-        left: 50% !important;
-        right: auto !important;
+        display: block !important;
 
-        transform: translateX(-50%) !important;
-
-        margin: 25px 0 0 !important;
+        position: relative !important;
 
         width: 120px !important;
         height: 3px !important;
+
+        left: auto !important;
+        right: auto !important;
+
+        transform: none !important;
+
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 25px !important;
+
+        background: linear-gradient(
+            90deg,
+            #6c2cff,
+            #9b4dff,
+            #ff9f43
+        ) !important;
+
+        border-radius: 10px !important;
     }
 
 }
