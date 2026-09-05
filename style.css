@@ -3293,3 +3293,36 @@ hr {
     }
 
 }
+
+
+/* =========================================
+   اصلاح دقیق خط وسط هدر در موبایل
+   بدون تغییر باکس‌های طرفین
+========================================= */
+
+@media (max-width: 700px) {
+
+    .site-header::after {
+        content: "" !important;
+
+        display: block !important;
+
+        width: 120px !important;
+        height: 3px !important;
+
+        grid-column: 1 / -1 !important;
+        justify-self: center !important;
+
+        margin: 25px auto 0 !important;
+
+        background: linear-gradient(
+            90deg,
+            #6c2cff,
+            #9b4dff,
+            #ff9f43
+        ) !important;
+
+        border-radius: 10px !important;
+    }
+
+}
