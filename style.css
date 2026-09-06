@@ -3326,3 +3326,18 @@ hr {
     }
 
 }
+
+
+
+
+/* =========================================
+   اصلاح خط وسط هدر در موبایل
+   ========================================= */
+@media (max-width: 600px) {
+    .site-header::after {
+        grid-column: 2 !important;
+        justify-self: center !important;
+        width: 120px !important;
+        margin: 25px auto 0 !important;
+    }
+}
