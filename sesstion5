@@ -14,9 +14,9 @@
 
     <div class="video-container">
         <video controls width="100%">
-            <source src="./video/session5.mp4" type="video/mp4">
-            مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
-        </video>
+    <source src="./video/session5.m4v" type="video/mp4">
+    مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+</video>
     </div>
 
     <h2>فایل پروژه جلسه پنجم</h2>
