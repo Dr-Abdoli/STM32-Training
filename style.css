@@ -3341,3 +3341,52 @@ hr {
         margin: 25px auto 0 !important;
     }
 }
+
+
+
+/* =========================================
+   یکسان‌سازی کارت‌های دوره‌ها با GPIO و Timer
+   ========================================= */
+
+/* مقدمات و راه‌اندازی STM32 */
+.courses .intro-card {
+    background: linear-gradient(145deg, #eef6ff, #ffffff) !important;
+    border-top: 4px solid #0066cc !important;
+}
+
+.courses .intro-card .course-icon {
+    color: #0066cc !important;
+}
+
+
+/* Interrupt */
+.courses .interrupt-card {
+    background: linear-gradient(145deg, #f4edff, #ffffff) !important;
+    border-top: 4px solid #7b2cff !important;
+}
+
+.courses .interrupt-card .course-icon {
+    color: #7b2cff !important;
+}
+
+
+/* Debounce */
+.courses .debounce-card {
+    background: linear-gradient(145deg, #fff3e6, #ffffff) !important;
+    border-top: 4px solid #f59e0b !important;
+}
+
+.courses .debounce-card .course-icon {
+    color: #f59e0b !important;
+}
+
+
+/* Counter */
+.courses .counter-card {
+    background: linear-gradient(145deg, #eef6ff, #ffffff) !important;
+    border-top: 4px solid #0284c7 !important;
+}
+
+.courses .counter-card .course-icon {
+    color: #0284c7 !important;
+}
