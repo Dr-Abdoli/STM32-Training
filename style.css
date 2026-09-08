@@ -3344,3 +3344,30 @@ hr {
 
 
 
+/* =========================================
+   رنگ‌دهی 4 کارت سفید دوره‌ها
+========================================= */
+
+/* Interrupt */
+.courses .interrupt-card {
+    background: linear-gradient(145deg, #e9ddff, #f7f2ff) !important;
+    border-top: 4px solid #7c3aed !important;
+}
+
+/* مقدمات و راه‌اندازی STM32 */
+.courses .intro-card {
+    background: linear-gradient(145deg, #dceeff, #f1f7ff) !important;
+    border-top: 4px solid #0066cc !important;
+}
+
+/* Counter */
+.courses .counter-card {
+    background: linear-gradient(145deg, #dff3ff, #f1faff) !important;
+    border-top: 4px solid #0284c7 !important;
+}
+
+/* Debounce */
+.courses .debounce-card {
+    background: linear-gradient(145deg, #ffead5, #fff7ef) !important;
+    border-top: 4px solid #f59e0b !important;
+}
