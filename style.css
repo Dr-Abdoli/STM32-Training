@@ -3345,30 +3345,30 @@ hr {
 
 
 /* =========================================
-   رنگ دقیق 4 کارت سفید
-   بر اساس ترتیب واقعی کارت‌ها
+   رنگ نهایی کارت‌های دوره
+   بر اساس نام واقعی کلاس‌ها
 ========================================= */
 
-/* کارت مقدمات STM32 - کارت اول */
-.courses .course-card:nth-child(1) {
+/* مقدمات STM32 */
+.courses .intro-card {
     background: linear-gradient(145deg, #e3f0ff, #f4f8ff) !important;
     border-top: 4px solid #0066cc !important;
 }
 
-/* کارت Interrupt - کارت سوم */
-.courses .course-card:nth-child(3) {
+/* Interrupt */
+.courses .interrupt-card {
     background: linear-gradient(145deg, #eee4ff, #f8f4ff) !important;
     border-top: 4px solid #7c3aed !important;
 }
 
-/* کارت Counter - کارت چهارم */
-.courses .course-card:nth-child(4) {
+/* Counter */
+.courses .counter-card {
     background: linear-gradient(145deg, #e2f5ff, #f3fbff) !important;
     border-top: 4px solid #0284c7 !important;
 }
 
-/* کارت Debounce - کارت ششم */
-.courses .course-card:nth-child(6) {
+/* Debounce */
+.courses .debounce-card {
     background: linear-gradient(145deg, #ffead8, #fff7ef) !important;
     border-top: 4px solid #f59e0b !important;
 }
