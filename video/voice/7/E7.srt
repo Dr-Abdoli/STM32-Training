@@ -1,0 +1,283 @@
+﻿1
+00:00:04,680 --> 00:00:20,080
+In the name of God. In this part, we are going to teach PWM using STM32. First, let us see what PWM actually means, what settings it has in STM32, and what code is used to reach the final result.
+
+2
+00:00:20,080 --> 00:00:42,520
+The final PWM project is this: we define two push buttons. Pressing one button increases the LED brightness until it reaches its maximum; pressing the other button decreases the LED brightness.
+
+3
+00:00:42,520 --> 00:01:02,160
+If we press the other push button, the LED brightness decreases to its minimum value, which is zero. First, let us see what PWM does and what the basic concept of PWM is. PWM is essentially a square wave.
+
+4
+00:01:02,160 --> 00:01:22,200
+We change the amount of time that this square wave is HIGH or ON so that we can control the amount of output power. I will explain the square-wave nature in the next slide; now let us discuss the main PWM parameters.
+
+5
+00:01:22,200 --> 00:01:43,079
+PWM, or Pulse Width Modulation, is a square wave in which we change the ON or HIGH portion of the pulse, and therefore change the output power. Another important concept is the PWM duty cycle, which describes the amount of time the signal is HIGH or ON.
+
+6
+00:01:43,079 --> 00:02:00,520
+Duty cycle is the ratio of the ON time of the pulse to one complete period. Therefore, as the duty cycle increases, the output power that we want to deliver to the system also increases.
+
+7
+00:02:00,520 --> 00:02:20,480
+Here PWM is shown more clearly. We have drawn three different cases: a low duty cycle, a medium duty cycle, and a higher duty cycle.
+
+8
+00:02:20,480 --> 00:02:41,959
+Before continuing, let us define a few important parameters. The period is one complete cycle from this point to this point. Duty cycle is related to the ON time compared with the OFF time, or more precisely the fraction of one period during which the signal is ON.
+
+9
+00:02:41,959 --> 00:03:01,360
+Here the duty cycles are 90%, 50%, and 20%. Frequency is the inverse of the period, and amplitude is the HIGH-level voltage, which in STM32 is 3.3 volts.
+
+10
+00:03:01,360 --> 00:03:21,000
+Here we say that the distance from this point to this point is one period. The ON time in this period is discussed in microseconds, and the complete period is 20 microseconds. The ratio gives the duty cycle; for example, an ON time of 10 microseconds gives 50%.
+
+11
+00:03:21,000 --> 00:03:40,159
+Accordingly, a 50% ratio gives a corresponding output level, while a 90% duty cycle gives much more output power. With a 90% duty cycle the output is near its maximum, while the lower duty cycle gives the minimum output.
+
+12
+00:03:40,159 --> 00:04:03,280
+We want to change the ON and OFF times using the push buttons, so that the voltage or power delivered to the LED can be increased or decreased and therefore its brightness can be increased or reduced.
+
+13
+00:04:03,280 --> 00:04:21,519
+Here we have defined several STM32 pins. One of them is PB0, which is used as the increase button for increasing the PWM value or the PWM output power. I will explain the rest in the following part.
+
+14
+00:04:21,519 --> 00:04:42,520
+PWM is generated using a timer. If the PWM counter period is considered 200, we increase the value by 10 at a time when one button is pressed, until the LED reaches maximum brightness. For the other button, the process is decreasing.
+
+15
+00:04:42,520 --> 00:05:02,320
+For the decreasing case, if the counter period is 200, we reduce the value by 10 at a time. Thus, after about 20 presses, the LED goes from maximum brightness to completely OFF.
+
+16
+00:05:02,320 --> 00:05:21,199
+We also use a pin for the PWM output, driven by Timer 1, Channel 1. This pin produces the PWM output.
+
+17
+00:05:21,199 --> 00:05:41,120
+Before going to the program, we first need to configure PWM in STM32CubeMX. When creating the project, use the STM32F103C8T6 as the reference device, or select the corresponding IC you are actually using.
+
+18
+00:05:41,120 --> 00:06:01,039
+The most important settings here are the PWM settings. We enable Timer 1 for PWM. In its settings we do not change anything except the clock source; we use the internal clock.
+
+19
+00:06:01,039 --> 00:06:20,639
+In the Clock Configuration section, we define the external clock. An 8 MHz crystal is connected to HSE, and the same 8 MHz clock is produced without modification. Timer 1 uses the APB2 clock.
+
+20
+00:06:20,639 --> 00:06:40,160
+Therefore, Timer 1 has an 8 MHz clock frequency here, so we select Internal Clock as the timer clock source.
+
+21
+00:06:40,160 --> 00:07:04,160
+Then we enable PWM on Channel 1. With these settings, the corresponding PA8 pin becomes active. Timer 1 Channel 1 uses the internal clock and PWM generation, so PA8, or TIM1 Channel 1, must be enabled. We do not need other settings here.
+
+22
+00:07:04,160 --> 00:07:22,280
+Now we reach the PWM parameters. There is a prescaler, which is a divider that reduces the 8 MHz clock to lower values. We leave it at zero, as explained previously in the Timer lesson.
+
+23
+00:07:22,280 --> 00:07:40,720
+We also leave Counter Mode unchanged. The Counter Period is set to 199, which means the timer counts from zero up to 199, giving 200 count values in total.
+
+24
+00:07:40,720 --> 00:08:03,199
+This means the timer overflows at 200: it starts at zero, counts upward through values such as 10, 20, and 150, reaches 200, overflows, and starts again from zero. When a push button is pressed, our program increases the PWM value by 10 each time.
+
+25
+00:08:03,199 --> 00:08:22,560
+Each increase of 10 changes the effective PWM level until the counter reaches 200. Therefore the maximum brightness is at 200 and the minimum brightness is at zero. The Counter Period determines this maximum count.
+
+26
+00:08:22,560 --> 00:08:41,719
+For example, if the value were 100, increasing it by 10 on each button press would give ten steps, and after ten presses we would reach maximum brightness. This explains the meaning of the Counter Period; the other timer settings remain unchanged.
+
+27
+00:08:41,719 --> 00:09:01,880
+Now we go to GPIO. We define PB0 and PB1 as external interrupts. We configure the external interrupts for the rising edge, meaning they respond to a rising edge, and with this configuration we use pull-down resistors.
+
+28
+00:09:01,880 --> 00:09:20,040
+Why pull-down? Because when we detect a rising edge, the initial state should be LOW. We use the same type of configuration for the other button. We also use PC13, as before, as an additional indicator.
+
+29
+00:09:20,040 --> 00:09:40,440
+Now what does the NVIC do? I explained NVIC earlier, but it is clearer here because we are using two interrupts. NVIC handles interrupt prioritization.
+
+30
+00:09:40,440 --> 00:10:02,240
+For example, we assign one priority to External Interrupt 0 and another priority to External Interrupt 1. When the program starts, the configured priority determines which interrupt has precedence.
+
+31
+00:10:02,240 --> 00:10:22,320
+In the NVIC settings, we enable both External Interrupt 0 and External Interrupt 1. They must be enabled; otherwise the interrupt will not reach the interrupt service routine. In RCC we select HSE so the external crystal is used as the clock source.
+
+32
+00:10:22,320 --> 00:10:40,720
+In the System settings we select Serial Wire for debugging. The remaining settings do not require special changes. In Clock Configuration we use the same 8 MHz clock.
+
+33
+00:10:40,720 --> 00:11:00,079
+For the project we set the project name and storage path. We select the ARM compiler/version, and we remove the Use Default Firmware Location option so that the required package can be selected from the package installed for this project.
+
+34
+00:11:00,079 --> 00:11:21,160
+We select the required package that I have also provided on the site. Then I click Generate Code. The first time, you should choose Open Project; because my project is already open, I do not need to open it again and can close the CubeMX window.
+
+35
+00:11:21,160 --> 00:11:40,160
+Before the project completely opens, it takes some time. PWM is used in many applications: controlling motor speed, controlling brightness, and many other systems.
+
+36
+00:11:40,160 --> 00:12:01,360
+PWM is also widely used in switching ICs. It controls how long a pulse stays ON versus OFF. I close this project window because I already opened the project, and I save the settings so that changes are applied to the STM32 program.
+
+37
+00:12:01,360 --> 00:12:20,800
+CubeMX has automatically configured several items. For example, PB3 and PB1 are configured for rising-edge external interrupts with pull-up/pull-down settings, and PC13 is configured as shown here.
+
+38
+00:12:20,800 --> 00:12:43,320
+Now we go to the timer initialization section. We have selected a prescaler value of zero. Starting from the top, we have defined several initial values.
+
+39
+00:12:43,320 --> 00:13:01,079
+We define the variable value as an integer. This value is what we increase or decrease by 10 each time. We also have an on/off flag 0 and an on/off flag 1.
+
+40
+00:13:01,079 --> 00:13:21,600
+What do these flags mean? When the flag becomes 1, meaning a valid interrupt has occurred, the program enters the while loop and changes the value by steps of 10. The program will make this clearer.
+
+41
+00:13:21,600 --> 00:13:40,000
+There is also button_flag0, which is treated as an 8-bit flag and is used when a valid button press has occurred. We also have last_interrupt_time.
+
+42
+00:13:40,000 --> 00:14:01,759
+last_interrupt_time represents the time of the most recent valid button interrupt. When you press the button, an interrupt may occur several times because of bouncing, so we define a debounce period and store the last valid interrupt time.
+
+43
+00:14:01,759 --> 00:14:21,320
+The other push button, button 1, is defined in the same way. Now let us look at the interrupt subroutine and explain the program line by line, including how the button press and debounce process work.
+
+44
+00:14:21,320 --> 00:14:40,279
+As explained before, this is the EXTI callback function. When the callback is called, execution enters this function. When you press a button and an interrupt occurs, the program enters this callback.
+
+45
+00:14:40,279 --> 00:15:02,480
+Then it checks whether PB0 was pressed. This condition means that when PB0 is pressed, the corresponding code is executed; when PB1 is pressed, the other condition is executed.
+
+46
+00:15:02,480 --> 00:15:21,120
+For PB3 we also have a tick value, which I explained in the Timer lesson. Whenever the program is running, the CPU executes the code, and HAL_GetTick provides the current system tick time.
+
+47
+00:15:21,120 --> 00:15:40,440
+We store the result of HAL_GetTick in a counter-time variable so that we can know the current time at that moment. Here we have last_interrupt_time. Let me explain it simply.
+
+48
+00:15:40,440 --> 00:16:01,399
+When you press the button, imagine that 5, 10, 20, or 50 milliseconds pass. If 50 milliseconds have passed, the current time is now 50 milliseconds later than the last interrupt time.
+
+49
+00:16:01,399 --> 00:16:20,240
+Suppose the last interrupt time was 1000. If the current time becomes 1150, the difference is 150, which is not greater than 200, so another interrupt is not accepted.
+
+50
+00:16:20,240 --> 00:16:41,480
+If the button is pressed again, the interrupt happens again, but the debounce check rejects it until enough time has passed. Suppose the last valid time is now 2000.
+
+51
+00:16:41,480 --> 00:17:00,480
+Because the time interval is short, the actual values are small: 5 ms, 10 ms, 100 ms, and so on. If the last interrupt time is 2000 ms, and the button remains pressed, the current time may become 2050, 2100, 2150, 2200, and finally 2250.
+
+52
+00:17:00,480 --> 00:17:20,079
+When 2250 minus the time of the previous valid press becomes greater than 200, we consider this a valid new press. A debounce interval of 200 ms is a suitable value here.
+
+53
+00:17:20,079 --> 00:17:43,360
+At that moment we store the new current time in last_interrupt_time, so the next debounce calculation starts from this valid press time. Then button_flag0 is set to 1. The same process continues for the other button.
+
+54
+00:17:43,360 --> 00:18:01,559
+There is nothing special in this part until we reach the PWM initialization line. We need to start the PWM timer on Channel 1.
+
+55
+00:18:01,559 --> 00:18:22,679
+This line must be present; without it the PWM timer will not work. In the initialization section, under the USER CODE section, we write the PWM start command.
+
+56
+00:18:22,679 --> 00:18:41,960
+Remember to put this line under USER CODE. Do not place it outside the user-code section, because if you regenerate the project in CubeMX, your changes could be removed. We put the line there so the timer is activated.
+
+57
+00:18:41,960 --> 00:19:01,400
+Now we enter the while loop. If button_flag0 is 1, it means the button press was valid. We then reset button_flag0 to zero so that the loop can wait for the next valid press.
+
+58
+00:19:01,400 --> 00:19:20,440
+Next, we add 10 to value. If value becomes greater than 200, why do we use 200? Because, as we set in the Timer configuration, 200 is the maximum brightness value.
+
+59
+00:19:20,440 --> 00:19:40,559
+If the value has not exceeded 200, the loop continues and increases it by 10 each time. Once it becomes greater than 200, we limit it to the maximum value of 200. The same principle is used for the other button.
+
+60
+00:19:40,559 --> 00:20:01,600
+After adding 10, the value becomes 10 in this example. We then reach the important PWM command. Since we pressed button 0, we do not execute the code for the other button.
+
+61
+00:20:01,600 --> 00:20:22,919
+Now the value is 10. We write the following command: put the value into the Compare register of Timer 1, Channel 1. What is Compare? This is very important.
+
+62
+00:20:22,919 --> 00:20:42,799
+Compare is one of the most important PWM concepts. It is a reference value that is compared with the timer counter. Timer 1 in PWM mode has an internal counter that counts from zero up to 200.
+
+63
+00:20:42,799 --> 00:21:02,480
+The counter increases: 0, 1, 2, and so on. Suppose value is 50. We put 50 into Compare. The counter keeps counting, and when the counter reaches 50, the compare condition occurs.
+
+64
+00:21:02,480 --> 00:21:21,240
+After the compare point, the counter continues counting. The Compare value determines the duty-cycle level that we have selected. In other words, value is written into the Compare register, and Compare determines the duty cycle.
+
+65
+00:21:21,240 --> 00:21:40,679
+For example, if Compare is 20, then 20 divided by 200 gives about 10%. If Compare is 100, then 100 divided by 200 gives 50%. Therefore Compare represents the duty cycle, or more precisely determines the amount of time the PWM output remains HIGH.
+
+66
+00:21:40,679 --> 00:22:02,240
+Thus the value is written into Compare to determine the ON or HIGH time. If value becomes 100, it is placed in Compare and produces about a 50% duty cycle. This process repeats continuously. Now I will build the project to check for errors.
+
+67
+00:22:02,240 --> 00:22:22,400
+The first build may take a little time. The project builds without errors and without warnings. Now we connect the programmer.
+
+68
+00:22:22,400 --> 00:22:45,600
+Here we connect the programmer to the computer and load the program so that it is written into the microcontroller.
+
+69
+00:22:45,600 --> 00:23:02,600
+After programming, you can see that PB0 and PB1 are defined as the two push-button inputs. The PWM output is the pin generated by the PWM timer.
+
+70
+00:23:02,600 --> 00:23:22,120
+When I press this button, the LED brightness gradually increases until it reaches its maximum. When I press the other button, the brightness decreases.
+
+71
+00:23:22,120 --> 00:23:31,440
+The LED brightness reaches its minimum value. May you be under God's protection.
